@@ -55,3 +55,31 @@ boutonTrier.addEventListener("click", function () {
 	});
 	console.log(piecesReordonnees);
 });
+
+function addItemsToList(courseName, institute) {
+      var ul = document.getElementById("Certificates-List");
+
+      var _courseName = document.createElement("li");
+      var _institute = document.createElement("li");
+
+      _courseName.innerHTML = "CourseName: " + courseName;
+      _institute.innerHTML = "Institute: " + institute;
+
+      ul.appendChild(_courseName);
+      ul.appendChild(_institute);
+ };
+
+function FetchAllData() {
+      firebase
+        .database()
+        .ref("Certificates-List")
+        .once("value", function (snapshot) {
+          snapshot.forEach(function (ChildSnapshot) {
+            let courseName = ChildSnapshot.val().courseName;
+            let institute = ChildSnapshot.val().institute;
+            addItemsToList(courseName, institute);
+          });
+        });
+ };
+
+//window.onload(FetchAllData());
