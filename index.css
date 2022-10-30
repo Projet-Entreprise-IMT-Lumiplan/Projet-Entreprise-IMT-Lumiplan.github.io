@@ -10,15 +10,20 @@ body {
     left: -123px;
     top: -185px;
 }
-   
+
+@font-face {
+    font-family: 'Josefin Sans Std';
+    src: url('http://fonts.cdnfonts.com/css/josefin-sans-std');
+}
 
 h1{
 position: absolute;
-left: 30%;
+left: 28%;
 top: 140px;
-font-family: 'Josefin Sans';
+font-family: 'Josefin Sans Std', sans-serif;
+text-transform: uppercase;
 font-weight: 400;
-font-size: 64px;
+font-size: 60px;
 line-height: 64px;
 letter-spacing: 0.215em;
 color: #FFFFFF;
@@ -34,7 +39,7 @@ top: 260px;
     position: absolute;
     width: 576px;
     height: 350px;
-    left: 30%;
+    left: 31%;
     top: 445px;
     background: #000000;
     border-radius: 35px;
