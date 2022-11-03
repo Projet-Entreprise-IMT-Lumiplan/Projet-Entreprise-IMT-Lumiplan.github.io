@@ -15,8 +15,8 @@ import {
   showLoginForm, 
   showApp, 
   showLoginError, 
-  btnLogin,
-  btnLogout
+  signInButton,
+  logoutButton,
 } from './ui'
  
 
@@ -75,8 +75,8 @@ const logout = async () => {
   await signOut(auth);
 }
 
-btnLogin.addEvenListener("click", loginEmailPassword);
-btnLogout.addEvenListener("click", logout);
+signInButton.addEvenListener("click", loginEmailPassword);
+logoutButton.addEvenListener("click", logout);
 
 const auth = getAuth(firebaseApp);
 monitorAuthState();
