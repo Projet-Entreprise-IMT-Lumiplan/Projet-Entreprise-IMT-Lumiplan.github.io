@@ -3,9 +3,9 @@ import { AuthErrorCodes } from "https://www.gstatic.com/firebasejs/9.13.0/fireba
 export const txtEmail = document.querySelector('#txtEmail')
 export const txtPassword = document.querySelector('#txtPassword')
 
-export const signInButton = document.querySelector('#btnLogin')
+export const signInButton = document.querySelector('#signInButton')
 
-export const logoutButton = document.querySelector('#btnLogout')
+export const logoutButton = document.querySelector('#logoutButton')
 
 export const divAuthState = document.querySelector('#divAuthState')
 export const lblAuthState = document.querySelector('#lblAuthState')
