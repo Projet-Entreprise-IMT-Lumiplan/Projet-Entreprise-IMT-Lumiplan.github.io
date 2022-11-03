@@ -3,9 +3,9 @@ import { AuthErrorCodes } from 'firebase/auth';
 export const txtEmail = document.querySelector('#txtEmail')
 export const txtPassword = document.querySelector('#txtPassword')
 
-export const btnLogin = document.querySelector('#btnLogin')
+export const signInButton = document.querySelector('#btnLogin')
 
-export const btnLogout = document.querySelector('#btnLogout')
+export const logoutButton = document.querySelector('#btnLogout')
 
 export const divAuthState = document.querySelector('#divAuthState')
 export const lblAuthState = document.querySelector('#lblAuthState')
