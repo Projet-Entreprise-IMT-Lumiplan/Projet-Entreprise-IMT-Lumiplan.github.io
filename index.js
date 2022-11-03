@@ -55,7 +55,7 @@ const loginEmailPassword = async() => {
 // Monitor auth state
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, user => {
-    if (user) {
+    if (user != null) {
       console.log(user)
       showApp()
       showLoginState(user)
