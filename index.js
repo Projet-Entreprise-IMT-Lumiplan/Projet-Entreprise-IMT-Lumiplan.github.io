@@ -4,11 +4,22 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
 import { getAuth, 
 onAuthStateChanged, 
-connectAuthEmulator,
 signInWithEmailAndPassword, 
 } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
 	
  // https://firebase.google.com/docs/web/setup#available-libraries
+ 
+import { 
+  hideLoginError, 
+  showLoginState, 
+  showLoginForm, 
+  showApp, 
+  showLoginError, 
+  btnLogin,
+  btnSignup,
+  btnLogout
+} from './ui'
+ 
 
  //Connection with our firebase page base on apiKey
  const firebaseConfig = {
@@ -26,8 +37,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
-
-connectAuthEmulator(auth, "http://localhost:9899");
 		
 //Detect auth state
 onAuthStateChanged(auth, user => { 
@@ -37,3 +46,21 @@ onAuthStateChanged(auth, user => {
       console.log("Pas de user");
     }
 });
+
+//connectAuthEmulator(auth, "http://localhost:9899");
+
+const loginEmailPassword = async() => { 
+	const loginEmail = txtEmail.value;
+	const loginPassword = txtPassword.value;
+	
+	try{
+		const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+		console.log(userCredential.user);
+	} catch(error){
+		console.log(error)
+		showLoginError(error)
+	}
+	
+}
+
+btnLogin.addEvenListener("click", loginEmailPassword);
