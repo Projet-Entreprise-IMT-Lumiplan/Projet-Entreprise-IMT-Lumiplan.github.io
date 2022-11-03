@@ -17,7 +17,7 @@ import {
   showLoginError, 
   signInButton,
   logoutButton,
-} from './authentification/Accueil.js'
+} from './authentification/AuthBackend.js'
  
 
  //Connection with our firebase page base on apiKey
