@@ -17,7 +17,7 @@ import {
   showLoginError, 
   signInButton,
   logoutButton,
-} from './authentification/AuthBackend.js'
+} from './authentification/AuthBackend.js';
  
 
  //Connection with our firebase page base on apiKey
@@ -46,8 +46,8 @@ const loginEmailPassword = async() => {
     const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
     console.log(userCredential.user);
   } catch(error){
-      console.log(error)
-      showLoginError(error)
+      console.log(error);
+      showLoginError(error);
 	}
 	
 }
@@ -56,16 +56,16 @@ const loginEmailPassword = async() => {
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, user => {
     if (user != null) {
-      console.log(user)
-      showApp()
-      showLoginState(user)
+      console.log(user);
+      showApp();
+      showLoginState(user);
 
-      hideLoginError()
-      hideLinkError()
+      hideLoginError();
+      hideLinkError();
     }
     else {
-      showLoginForm()
-      lblAuthState.innerHTML = `Vous n'êtes pas connectés !`
+      showLoginForm();
+      lblAuthState.innerHTML = `Vous n'êtes pas connectés !`;
     }
   })
 }
