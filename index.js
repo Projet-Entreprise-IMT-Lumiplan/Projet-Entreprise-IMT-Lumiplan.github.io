@@ -16,7 +16,6 @@ import {
   showApp, 
   showLoginError, 
   btnLogin,
-  btnSignup,
   btnLogout
 } from './ui'
  
