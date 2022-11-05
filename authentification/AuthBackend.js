@@ -1,45 +1,46 @@
-import { AuthErrorCodes } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import { AuthErrorCodes, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import {auth} from '../index.js';
 
-export const txtEmail = document.querySelector('#txtEmail')
-export const txtPassword = document.querySelector('#txtPassword')
 
-export const signInButton = document.querySelector('#signInButton')
+const txtEmail = document.querySelector('#txtEmail')  
+const txtPassword = document.querySelector('#txtPassword')
+const signInButton = document.querySelector('#signInButton')
+const logoutButton = document.querySelector('#logoutButton')
+const divAuthState = document.querySelector('#divAuthState')
+const lblAuthState = document.querySelector('#lblAuthState')
+const divLoginError = document.querySelector('#divLoginError')
+const lblLoginErrorMessage = document.querySelector('#lblLoginErrorMessage')
 
-export const logoutButton = document.querySelector('#logoutButton')
 
-export const divAuthState = document.querySelector('#divAuthState')
-export const lblAuthState = document.querySelector('#lblAuthState')
 
-export const divLoginError = document.querySelector('#divLoginError')
-export const lblLoginErrorMessage = document.querySelector('#lblLoginErrorMessage')
-
-export const showLoginForm = () => {
-  login.style.display = 'block'
-  app.style.display = 'none'  
+const loginEmailPassword = async() => { 
+  
+  const loginEmail = txtEmail.value;
+  const loginPassword = txtPassword.value;
+	
+  try{
+    const userCredential = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
+    console.log(userCredential);
+  } catch(error){
+      console.log(error);
+      showLoginError(error);
+	}
 }
 
-export const showApp = () => {
-  login.style.display = 'none'
-  app.style.display = 'block'
+// Log out
+/*const logout = async () => {
+  await signOut(auth);
 }
+*/
 
-export const hideLoginError = () => {
-  divLoginError.style.display = 'none'
-  lblLoginErrorMessage.innerHTML = ''
-}
 
-export const showLoginError = (error) => {
-  divLoginError.style.display = 'block'    
-  if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
-    lblLoginErrorMessage.innerHTML = `Wrong password. Try again.`
-  }
-  else {
-    lblLoginErrorMessage.innerHTML = `Error: ${error.message}`      
-  }
-}
+signInButton.addEventListener('click', loginEmailPassword);
+//logoutButton.addEventListener("click", logout);
 
+/*
 export const showLoginState = (user) => {
   lblAuthState.innerHTML = `You're logged in as ${user.displayName} (uid: ${user.uid}, email: ${user.email}) `
 }
 
 hideLoginError()
+*/
