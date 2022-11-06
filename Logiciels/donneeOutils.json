@@ -72,8 +72,8 @@
         },
         {
             "Identifiant": 8,
-            "Outils": "Microsoft D365",
-            "Description": "",
+            "Outils": "MS D365",
+            "Description": "Microsoft Dynamics 365",
             "Mots clés recherche": "ERP, Supply, Achats, base articles",
             "Référent": "?",
             "Equipe admin": "ANI, MNG, FSO, AGA",
@@ -172,8 +172,8 @@
         },
         {
             "Identifiant": 18,
-            "Outils": "Google Workspace Business Standard",
-            "Description": "",
+            "Outils": "GWB Standard",
+            "Description": "Google Workplace Business Standard",
             "Mots clés recherche": "E-mail, mail, google, workspace",
             "Référent": "Frederique Rogandji",
             "Equipe admin": "FRO, VBE",
@@ -182,8 +182,8 @@
         },
         {
             "Identifiant": 19,
-            "Outils": "Google Workspace Business Starter",
-            "Description": "",
+            "Outils": "GWB Starter",
+            "Description": "Google Workplace Business Starter",
             "Mots clés recherche": "E-mail, mail, google, workspace",
             "Référent": "Frederique Rogandji",
             "Equipe admin": "FRO, VBE",
@@ -202,7 +202,7 @@
         },
         {
             "Identifiant": 21,
-            "Outils": "Adobe Creative Cloud",
+            "Outils": "Adobe CC",
             "Description": "",
             "Mots clés recherche": "adobe",
             "Référent": "Frederique Rogandji",
