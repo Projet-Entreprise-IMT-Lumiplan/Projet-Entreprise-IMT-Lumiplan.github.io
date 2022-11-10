@@ -112,7 +112,7 @@ div#Content div{
 
 div#Content div.leftbox {
     background-color: rgb(66, 66, 66);
-    background-image: url("logo-lumiplan.png");
+    background-image: url("/assets/logo-lumiplan.png");
     background-attachment:fixed;
     background-position:center center;
     background-size: 300px 300px;
