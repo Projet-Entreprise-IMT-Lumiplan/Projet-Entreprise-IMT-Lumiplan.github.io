@@ -5,7 +5,6 @@ import {auth} from '../index.js';
 const txtEmail = document.querySelector('#txtEmail')  
 const txtPassword = document.querySelector('#txtPassword')
 const signInButton = document.querySelector('#signInButton')
-const logoutButton = document.querySelector('#logoutButton')
 const divAuthState = document.querySelector('#divAuthState')
 const lblAuthState = document.querySelector('#lblAuthState')
 const divLoginError = document.querySelector('#divLoginError')
@@ -21,7 +20,8 @@ const loginEmailPassword = async() => {
   try{
     const userCredential = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
     //redirection towards the correct folder
-    navigate(loginPassword);
+    window.location.replace("./Logiciels/index.html");
+    user = userCredential.user;
     console.log(userCredential);
 
   } catch(error){
@@ -30,27 +30,11 @@ const loginEmailPassword = async() => {
 	}
 }
 
-// Log out (à mettre dans le header ?)
-/*const logout = async () => {
-  await signOut(auth);
-}
-*/
 
-// c pas un peu débile de mettre les mdp dans le code ?
-const navigate = (pwd) => {
-  if(pwd==="manager") {
-    window.location.replace("./listeCollaborateurs/index.html");
-  } else if (pwd==="collaborateur") {
-    window.location.replace("./Logiciels/index.html");
-  } else if (pwd="dsi123") {
-    window.location.replace("./Logiciels/index.html");
-  } else {
-    window.location.replace("./listeCollaborateurs/index.html");
-  }
-}
+
 
 signInButton.addEventListener('click', loginEmailPassword);
-//logoutButton.addEventListener("click", logout);
+
 
 /*
 export const showLoginState = (user) => {
