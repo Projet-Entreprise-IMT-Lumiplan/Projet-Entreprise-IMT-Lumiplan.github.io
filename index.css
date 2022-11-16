@@ -43,6 +43,7 @@ top: 260px;
     top: 445px;
     background: #000000;
     border-radius: 35px;
+    transform: translateY(-3rem)
 }
 form {
     color:#FFFFFF;
