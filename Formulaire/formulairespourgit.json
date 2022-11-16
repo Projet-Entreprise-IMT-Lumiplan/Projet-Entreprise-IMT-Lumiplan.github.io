@@ -1,0 +1,142 @@
+﻿[
+    {
+        "ID": "1",
+        "Etat": "2",
+        "Prenom": "PASCAL",
+        "Nom": "ADOLPHE",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "2",
+        "Etat": "2",
+        "Prenom": "CYRILL",
+        "Nom": "ALLEMOZ",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "3",
+        "Etat": "2",
+        "Prenom": "RACHID",
+        "Nom": "ALLOUTI",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "4",
+        "Etat": "2",
+        "Prenom": "AYOUB",
+        "Nom": "BELHADRI",
+        "Code Nature de Contrat": "CAP10"
+    },
+    {
+        "ID": "5",
+        "Etat": "2",
+        "Prenom": "ABDELKRIM",
+        "Nom": "BEN ABDERRAHMANE",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "6",
+        "Etat": "1",
+        "Prenom": "MATHIEU",
+        "Nom": "BESSON",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "7",
+        "Etat": "1",
+        "Prenom": "CEDRIC",
+        "Nom": "BOUCHARD",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "8",
+        "Etat": "1",
+        "Prenom": "VIJAYA",
+        "Nom": "BOYINA",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "9",
+        "Etat": "1",
+        "Prenom": "YOANN",
+        "Nom": "BRABANT",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "10",
+        "Etat": "1",
+        "Prenom": "NADEGE",
+        "Nom": "BRIAND",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "11",
+        "Etat": "1",
+        "Prenom": "MARC",
+        "Nom": "COSSE",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "12",
+        "Etat": "1",
+        "Prenom": "ELODIE",
+        "Nom": "COVA",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "13",
+        "Etat": "1",
+        "Prenom": "EDOUARD",
+        "Nom": "CUNY",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "14",
+        "Etat": "1",
+        "Prenom": "THOMAS",
+        "Nom": "DARBON",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "15",
+        "Etat": "1",
+        "Prenom": "CHRISTOPHE",
+        "Nom": "DETHOOR",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "16",
+        "Etat": "1",
+        "Prenom": "GeRARD",
+        "Nom": "DIGANI",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "17",
+        "Etat": "0",
+        "Prenom": "YANN",
+        "Nom": "DIORCET",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "18",
+        "Etat": "0",
+        "Prenom": "NICOLAS",
+        "Nom": "DOMPNIER",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "19",
+        "Etat": "0",
+        "Prenom": "HERVE",
+        "Nom": "DUBUFFET",
+        "Code Nature de Contrat": "CDI"
+    },
+    {
+        "ID": "20",
+        "Etat": "0",
+        "Prenom": "NICOLAS",
+        "Nom": "DURAND",
+        "Code Nature de Contrat": "CDI"
+    }
+]

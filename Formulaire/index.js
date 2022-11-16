@@ -1,7 +1,7 @@
 
 document.getElementById('form-to-check').addEventListener('submit', function(event){
     event.preventDefault();
-    fetch('EmployesOutils.json', {
+    fetch('formulairespourgit.json', {
         // method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ document.getElementById('form-to-check').addEventListener('submit', function(eve
 });
 
 function afficher(value){
-    document.getElementById('Personne').innerHTML = value[0].Nom + " " + value[0].Prenom + "\n Contrat : " + value[0]['Code Nature de Contrat'];
+    document.getElementById('Personne').innerHTML = value[0]["Nom"] + " " + value[0]["Prenom"] + "\n Contrat : " + value[0]['Code Nature de Contrat'];
     const zone = document.getElementById("zonedaffichage");
     zone.innerHTML = null;
 

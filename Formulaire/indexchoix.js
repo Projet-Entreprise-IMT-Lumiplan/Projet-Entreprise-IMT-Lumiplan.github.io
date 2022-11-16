@@ -1,6 +1,6 @@
 // Charger les formulaires à l'ouverture de la page
 window.onload = function(){
-    fetch('formulaires.json', {
+    fetch('formulairespourgit.json', {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -14,7 +14,7 @@ window.onload = function(){
 // Modifier les formulaire à concerver lors d'une recherche par Nom Prénom
 document.getElementById("searchInput").addEventListener('input', function(event){
     const valeur = event.target.value; // Valeur rentré lors de la recherche
-    fetch('formulaires.json', { // La base de donné étant peu importante on peut se permettre de se reconnecter à chaque modification de la recherche
+    fetch('formulairespourgit.json', { // La base de donné étant peu importante on peut se permettre de se reconnecter à chaque modification de la recherche
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
