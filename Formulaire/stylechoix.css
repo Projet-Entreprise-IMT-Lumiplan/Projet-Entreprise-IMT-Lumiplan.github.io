@@ -1,0 +1,47 @@
+#searchzone
+{
+    height: 4em;
+    width: 20em;
+    background-color: black;
+    border-radius: 6px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#logoloupe
+{
+    height: 1em;
+    width: auto;
+    margin: 0.5em;
+}
+
+h1
+{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.zone
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center ;
+}
+
+.poster
+{
+    height: 110px;
+    width: 100px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border: 2px solid black;
+    border-radius: 6px;
+    margin: 20px;
+    text-align: center;
+    word-break: break-word;
+    display: flex;
+    align-items: center;
+}
