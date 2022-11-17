@@ -1,0 +1,257 @@
+header {
+    background-color: rgb(66, 66, 66);
+}
+
+header div {
+    display:inline-block;
+}
+
+body {
+    background-color: rgb(66, 66, 66);
+    color :white;
+    margin: 0px;
+    padding: 0px;
+  }
+
+.menu {
+    /*background-color: red;*/
+    background-color: rgb(66, 66, 66);
+    width:33%;
+    vertical-align: top;
+}
+
+.menu a {
+    color: white;
+}
+
+
+.imgmenulateral {
+    height:75px;
+    filter:invert(100%);
+}
+
+li {
+    list-style:none !important; /*On enlève les puces de la liste */
+    color: #FFF;
+    padding:10px;
+    font-size:20px;
+    text-decoration:none;
+}
+
+header ul {
+    background-color:rgb(66, 66, 66);
+    padding:0;
+    margin:0;
+}
+
+header ul li {
+    list-style: none;
+    line-height:44px;
+    float:left;
+    background-color:rgb(66, 66, 66);
+}
+
+li a:hover {
+    border-bottom:3px #FFF solid;
+}
+
+header ul li ul { 
+    display:none; /* Rend le menu déroulant caché par défaut */
+}
+
+header ul li:hover ul { /* Affiche la dropNav au survol de la souris avec la class .drop */
+    z-index:99999;
+    display:list-item !important;
+    position:absolute;
+    margin-top:5px;
+    margin-left:-10px;
+}
+
+header ul li:hover ul li {
+    float:none;
+}
+
+.imglumos {
+    height: 50px;
+    margin-bottom: 2rem;
+}
+
+.sectionlumos{
+    background-color: rgb(66, 66, 66);
+    width:40%;
+    position:center;
+}
+
+.rechercher {
+    background-color: rgb(66, 66, 66);
+    width:26%;
+    vertical-align: top;
+}
+
+nav {
+    height:50px;
+}
+
+.menu-nav {
+    border-collapse:separate;
+    cursor:pointer;
+    background-color: rgb(66, 66, 66);
+    width:100%;
+    margin:0px 50px 10;
+}
+
+.letter {
+    background-color: #f3f3f3;
+}
+
+div#Content{
+    background-color: rgb(66, 66, 66);
+}
+
+div#Content div{
+    display: inline-block;
+    /*width:49%;*/
+}
+
+div#Content div.leftbox {
+    background-color: rgb(66, 66, 66);
+    background-image: url("logo-lumiplan.png");
+    background-attachment:fixed;
+    background-position:center center;
+    background-size: 300px 300px;
+    background-repeat:no-repeat;
+    width:90%;
+    overflow-y:scroll;
+}
+
+div#Content div.rightbox {
+    background-color: rgb(66, 66, 66);
+}
+
+footer {
+    background-color: rgb(66, 66, 66);
+}
+
+label 
+{
+	display: block;
+	float: left;
+    margin-left: 4%;
+    width: 90%;
+}
+
+input {
+    background-color: rgb(66, 66, 66);
+    color:white;
+}
+
+input[type=text] {
+    width: 93%;
+}
+
+input[type=date] {
+    margin-left: 4%;
+}
+
+input::placeholder {
+    color : rgb(200,200,200);
+    text-align: left;
+    vertical-align: top;
+}
+
+.tab {
+    margin: auto;
+}
+
+.row .cell10, .cell0, .cell11 {
+    border-collapse: collapse;
+}
+
+.cell10, .cell0, .cell11 {
+    display: table-cell;
+    width: 33%;
+}
+
+input[type=checkbox] {
+    margin-left: 4%;
+}
+
+.row {
+    height: 50px;
+}
+
+.cell1 {
+    vertical-align: middle;
+}
+
+.cell0 {
+    display: table-cell;
+    border-right: 2px solid white;
+    vertical-align: top;
+    text-align: left;
+    line-height: 2em;
+}
+
+.cell10 {
+    vertical-align: middle;
+}
+
+.cell11 {
+    vertical-align: top;
+    line-height: 3em;
+}
+
+.tab {
+    display: table;
+}
+
+.row {
+    display: table-row;
+}
+
+.commentaire {
+    display: table-cell;
+    border: 2px solid white;
+    width: 1066px;
+    padding: 4px;
+    vertical-align: center;
+}
+
+textarea {
+    width: 98%;
+    background-color: rgb(66, 66, 66);
+    color: white;
+}
+
+textarea::placeholder{
+    color: rgb(200,200,200);
+}
+
+.titre {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    border-right: 2px solid white;
+    background-color: rgb(100,100,100);
+    font-weight: bold;
+    font-size: large;
+}
+
+.titre1 {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    background-color: rgb(100,100,100);
+    font-weight: bold;
+    font-size: large;
+}
+
+input[type="submit"]{
+    width: 230;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+

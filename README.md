@@ -6,4 +6,6 @@
 
 [Logiciels](https://projet-entreprise-imt-lumiplan.github.io/Logiciels/)
 
-[Formulaires](https://projet-entreprise-imt-lumiplan.github.io/Formulaire/ChoixFormulaire.html)
+[Formulaires-stockage](https://projet-entreprise-imt-lumiplan.github.io/Formulaire/ChoixFormulaire.html)
+
+[Formulaires-remplissage](https://projet-entreprise-imt-lumiplan.github.io/Formulaire/formulaire_final.html)
