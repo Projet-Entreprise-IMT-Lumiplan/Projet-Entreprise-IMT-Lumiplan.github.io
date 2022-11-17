@@ -26,6 +26,7 @@ document.getElementById("searchInput").addEventListener('input', function(event)
 });
 
 // Affiche les formulaires des collaborateurs ayant 'valeur' dans leur Nom Prénom
+// Affiche les formulaires des collaborateurs ayant 'valeur' dans leur Nom Prénom
 function afficherecherche(value, valeur){
     // On remet toutes les zones à zero
     const zone0 = document.getElementById('zone0');
@@ -46,7 +47,12 @@ function afficherecherche(value, valeur){
             // S'il est recherché on affiche avec la méthode habituelle
             const poster = document.createElement("div");
             poster.setAttribute("class", "poster");
-            poster.innerHTML = value[j]["Nom"] + " " + value[j]["Prenom"];
+            let nom = (value[j]["Nom"]).toUpperCase();
+            let prenom = (value[j]["Prenom"]).charAt(0).toUpperCase() + (value[j]["Prenom"]).substring(1).toLowerCase();
+            poster.innerHTML = nom + " " + prenom;
+            // if (poster.scrollWidth > poster.clientWidth) {
+            //     poster.style.fontSize = "xx-small";
+            // }
             if(value[j]["Etat"] == 0){
                 zone0.appendChild(poster);
             } else if (value[j]["Etat"] == 1){
