@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumos</title>
+    <link rel="stylesheet" href="style_formulaire.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="sectionlumos">
+            <img class="imglumos" src="../assets/lumos.png">
+        </div>
+        <script type="text/javascript" src="formulaire.js"></script>
+        <div class="rechercher">
+            <form method="post" action="traitement.php">
+                <p>
+                    <input type="text" name="pseudo" id="pseudo" placeholder="Rechercher" size="30" maxlength="10" />
+                </p>
+            </form>
+        </div>
+
+        </div>
+    </header>
+
+
+<form id="entry" method="post">
+    <div class="tab">
+        <div class="row">
+            <div class="titre">INFORMATIONS GENERALES</div>
+            <div class="titre">CHECK LIST MATERIEL</div>
+            <div class="titre1">CHECK LIST OUTILS</div>
+        </div>
+
+        <div class="row">   
+            <div class="cell0">
+                <label for="date_d_embauche">Date d'embauche <br>
+                    <input id="date_d_embauche name" name="date_d_embauche" type="date" autofocus>
+                </label>
+            </div>
+            <div class="cell0">
+                <label for="achat_pc">Achat PC<br>
+                    <select name="achat_pc" id="achat_pc">
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+                    </select>
+                </label>
+            </div> 
+            <div class="cell10">
+                <input type="checkbox" name="mail" id="mail" />Email/Liste de diffusion : Teammaintenance, techniciens maintenance
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell0">
+                <label for="nom_prenom">Nom et prénom du futur collaborateur
+                    <input id="nom_prenom" name="nom_prenom" type="text" placeholder="Nom et prénom">
+                </label>
+            </div>
+            <div class="cell0">
+                <label for="specification_pc">Spécifications particulières
+                    <input type="text" id="specification_pc" name="specification_pc">
+                </label>
+            </div>
+            <div class="cell11">
+                <input type="checkbox" name="erp"/>ERP <br>
+                <input type="checkbox" name="annuaire"/>Annuaire
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell0">
+                <label for =bu>BU de rattachement <br>
+                    <select name="bu" id="bu">
+                        <option value="">--Sélectionner un BU--</option>
+                        <option value="holding">Lumiplan Holding</option>
+                        <option value="montagne">Lumiplan Montagne</option>
+                        <option value="transport_nantes">Lumiplan Transport Nantes</option>
+                        <option value="ville_nantes">Lumiplan Ville Nantes</option>
+                        <option value="duhamel">Lumiplan Duhamel</option>
+                        <option name="soridis">Lumiplan Soridis</option>
+                        <option name="transport_tours">Lumiplan Transport Tours</option>
+                        <option name="ville_paris">Lumiplan Ville Paris</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="cell0">
+                <label for="achat_tel">Achat téléphone mobile <br>
+                    <select name="achat_tel" id="achat_tel">
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="cell10">
+                <input type="checkbox" name="jira"/>Jira
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell0">
+                <label for=manager>Nom et prénom du Manager
+                    <input id=manager name=manager type=text placeholder="Nom et prénom">
+                </label>
+            </div>
+
+            <div class="cell0">
+                <label for="specification_tel">Spécifications particulières
+                    <input type="text" id="specification_tel" name="specification_tel">
+                </label>
+            </div>
+
+            <div class="cell11">
+                <input type="checkbox" name="sirh"/>SIRH <br>
+                <input type="checkbox" name="sciforma"/>Sciforma
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell0">
+                <label for=contrat>Nature du contrat <br>
+                    <select class="contrat" name="contrat" id="contrat">
+                        <option value="">--Sélectionner un contrat--</option>
+                        <option value="cdi">CDI</option>
+                        <option value="cdd">CDD</option>
+                        <option value="stage">Stage</option>
+                        <option value="alternance">Alternance</option>
+                        <option value="prestataire">Prestataire</option>
+                    </select>
+                </label>
+            </div>
+            
+            <div class="cell0">
+                <label for="fixe">Ligne Fixe <br>
+                    <select name="fixe" id="fixe">
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="cell10">
+                <input type="checkbox" name="avexia"/>Avexia - Uvet (déplacements)
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="cell0" id="cell2">
+                <script>
+                    const selectElement = document.querySelector(".contrat");
+                    var input=null;
+                    selectElement.addEventListener('change', (event) => {
+                        if (event.target.value != "cdi" && event.target.value != "" && input==null) {                          
+                            input = document.createElement("input");
+                            input.setAttribute('type', 'date');
+                            input.id='contrat_date'
+                            document.getElementById('cell2').appendChild(input);
+                        }
+
+                        if (event.target.value == "cdi" || event.target.value == "") {
+                            input.remove();
+                            input=null;
+                        }
+                    });   
+                </script>
+            </div> 
+
+            <div class="cell0">
+                <label for="specification_fixe">Spécifications particulières 
+                    <input type="text" id="specification_fixe" name="specification_fixe">
+                </label>
+            </div>
+
+            <div class="cell11">
+                <input type="checkbox" name="sales_force"/>Sales Force <br>
+                <input type="checkbox" name="praxedo" value="praxedo"/>Praxédo
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="cell0">
+            </div>
+            
+            <div class="cell0">
+                <label for="equipement_individuel">Equipement de protection individuelle <br>
+                    <select name="equipement_indivicuel" id="equipement_individuel">
+                        <option value="oui">Oui, Besoin : Casque, gants</option>
+                        <option value="non">Non</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell0">
+                <textarea id="commentaire1" name="commentaire1" rows="3" placeholder="COMMENTAIRES :"></textarea>
+            </div>
+            <div class="cell0">
+                <textarea id="commentaire2" name="commentaire2" rows="3" placeholder="COMMENTAIRES OU BESOINS SPECIFIQUES :"></textarea>
+            </div>
+            <div class="cell1">
+                <textarea id="commentaire3" name="commentaire3" rows="3" placeholder="COMMENTAIRES"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cell0">
+            </div>
+            <div class="cell0">
+                <input type="submit" onclick="JavaScript:sendData()">
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+</body>
+<footer>
+
+</footer>
+</html>
