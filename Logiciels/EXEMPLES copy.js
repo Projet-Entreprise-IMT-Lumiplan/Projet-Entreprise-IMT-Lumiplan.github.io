@@ -22,11 +22,14 @@ for (let i = 0; i < logiciels.length; i++) {
 	pieceElement.setAttribute('data-bs-logiciel', logiciels[i].Identifiant)
 
 	// On crée l’élément img.
+	const imageContainer = document.createElement("div");
+	imageContainer.setAttribute('class', 'position-relative');
 	const imageElement = document.createElement("img");
 	// On accède à l’indice i de la liste logiciels pour configurer la source de l’image.
 	imageElement.src = "./Frames_Icones/" + logiciels[i].Outils + '.png';
 	// On rattache l’image à pieceElement (la balise article)
-	pieceElement.appendChild(imageElement);
+	imageContainer.appendChild(imageElement);
+	pieceElement.appendChild(imageContainer);
 
 	// Idem
 
@@ -34,6 +37,18 @@ for (let i = 0; i < logiciels.length; i++) {
 	nomElement.innerText = logiciels[i].Outils;
 	pieceElement.appendChild(nomElement);
 	sectionFiches.appendChild(pieceElement);
+
+	//notif
+	const notif = document.createElement('span');
+	notif.setAttribute('class', 'position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger');
+	let content=0;
+	for (const [key, value] of Object.entries(contrats[i])) {
+		if (value.length > 0) {
+			content++;
+		}
+	}
+	notif.innerText=content;
+	imageContainer.appendChild(notif);
 }
 
 
