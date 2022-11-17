@@ -37,15 +37,16 @@ for (let i = 0; i < logiciels.length; i++) {
 
   //NOTIF
   const notif = document.createElement("span");
-  notif.setAttribute(
-    "class",
-    "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-  );
   let content = 0;
   for (const [key, value] of Object.entries(contrats[i])) {
     if (value.length > 0) {
       content++;
     }
+  }
+  if (content<7) {
+	notif.setAttribute('class','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger');
+  }else{
+	notif.setAttribute('class','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary');
   }
   notif.innerText = content;
   imageContainer.appendChild(notif);
