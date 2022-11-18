@@ -26,7 +26,6 @@ document.getElementById("searchInput").addEventListener('input', function(event)
 });
 
 // Affiche les formulaires des collaborateurs ayant 'valeur' dans leur Nom Prénom
-// Affiche les formulaires des collaborateurs ayant 'valeur' dans leur Nom Prénom
 function afficherecherche(value, valeur){
     // On remet toutes les zones à zero
     const zone0 = document.getElementById('zone0');
@@ -46,20 +45,51 @@ function afficherecherche(value, valeur){
         if (nomprenom.match(regex) || prenomnom.match(regex)){
             // S'il est recherché on affiche avec la méthode habituelle
             const poster = document.createElement("div");
+            poster.setAttribute("id", value[j]["ID"]);
             poster.setAttribute("class", "poster");
-            let nom = (value[j]["Nom"]).toUpperCase();
+            let nom = (value[j]["Nom"]).toUpperCase(); // On normalise en NOM Prenom
             let prenom = (value[j]["Prenom"]).charAt(0).toUpperCase() + (value[j]["Prenom"]).substring(1).toLowerCase();
             poster.innerHTML = nom + " " + prenom;
             // if (poster.scrollWidth > poster.clientWidth) {
             //     poster.style.fontSize = "xx-small";
             // }
             if(value[j]["Etat"] == 0){
+                poster.addEventListener("click", function(event){
+                    event.preventDefault();
+                    afficherformulaire(poster.getAttribute("id"));
+                });
                 zone0.appendChild(poster);
             } else if (value[j]["Etat"] == 1){
+                poster.addEventListener("click", function(event){
+                    event.preventDefault();
+                    afficherpopup1(poster.getAttribute("id"));
+                });
                 zone1.appendChild(poster);
             } else {
+                poster.addEventListener("click", function(event){
+                    event.preventDefault();
+                    afficherpopup2(poster.getAttribute("id"));
+                })
                 zone2.appendChild(poster);
-        }
+            }
         }
     }
 }
+
+// Permet à la page d'afficher le formulaire d'entré
+function afficherformulaire(id){
+    document.getElementById(id).innerHTML = "On affichera le formulaire à compléter";
+};
+
+// Permet d'afficher un pop-up pour choisir entre le formulaire ou le workflow
+function afficherpopup1(id){
+    document.getElementById(id).innerHTML = "On affichera un pop-up de choix";
+};
+
+// Permet d'afficher un pop-up pour choisir entre le formulaire d'entré ou de sortie
+function afficherpopup2(id){
+    document.getElementById(id).innerHTML = "On affichera un autre pop-up de choix";
+};
+
+// Permet à la page d'afficher le workflow
+function afficherworkflow(id){};
