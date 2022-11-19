@@ -83,13 +83,39 @@ function afficherformulaire(id){
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire ou le workflow
 function afficherpopup1(id){
-    document.getElementById(id).innerHTML = "On affichera un pop-up de choix";
+    document.getElementById(id).innerHTML = "On affiche un pop-up de choix";
+    afficherpopup();
 };
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire d'entré ou de sortie
 function afficherpopup2(id){
-    document.getElementById(id).innerHTML = "On affichera un autre pop-up de choix";
+    document.getElementById(id).innerHTML = "On affiche un autre pop-up de choix";
+    afficherpopup();
 };
+
+// Factorisation de la création d'un pop-up vierge, mobile, au centre du browser
+function afficherpopup(){
+    const ecranpourpopup = document.createElement("div");
+    ecranpourpopup.setAttribute("id", "ecranpourpop-up");
+    ecranpourpopup.style.top = window.pageYOffset + "px";
+    ecranpourpopup.addEventListener('click', function(event){ // En cliquant à côté du pop-up celui-ci disparait
+        event.preventDefault();
+        document.getElementById("espacedetravaille").removeChild(ecranpourpopup);
+    });
+    const popup = document.createElement("div");
+    popup.setAttribute("id", "pop-up");
+    popup.addEventListener('click', function(event){ // Cliquer dans le pop-up ne doit pas le dermer
+        event.preventDefault();
+        event.stopPropagation();
+    });
+    ecranpourpopup.appendChild(popup);
+    document.getElementById("espacedetravaille").appendChild(ecranpourpopup);
+};
+
+// Permet aux pop-up de rester au centre de l'écran
+window.addEventListener('scroll', function(){
+    document.getElementById("ecranpourpop-up").style.top = window.pageYOffset + "px";
+});
 
 // Permet à la page d'afficher le workflow
 function afficherworkflow(id){};
