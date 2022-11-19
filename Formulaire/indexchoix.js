@@ -97,25 +97,40 @@ function afficherpopup2(id){
 function afficherpopup(){
     const ecranpourpopup = document.createElement("div");
     ecranpourpopup.setAttribute("id", "ecranpourpop-up");
-    ecranpourpopup.style.top = window.pageYOffset + "px";
     ecranpourpopup.addEventListener('click', function(event){ // En cliquant à côté du pop-up celui-ci disparait
         event.preventDefault();
         document.getElementById("espacedetravaille").removeChild(ecranpourpopup);
     });
     const popup = document.createElement("div");
     popup.setAttribute("id", "pop-up");
-    popup.addEventListener('click', function(event){ // Cliquer dans le pop-up ne doit pas le dermer
+    popup.addEventListener('click', function(event){ // Cliquer dans le pop-up ne doit pas le fermer
         event.preventDefault();
         event.stopPropagation();
     });
     ecranpourpopup.appendChild(popup);
     document.getElementById("espacedetravaille").appendChild(ecranpourpopup);
+    placerpopup();
 };
 
 // Permet aux pop-up de rester au centre de l'écran
 window.addEventListener('scroll', function(){
-    document.getElementById("ecranpourpop-up").style.top = window.pageYOffset + "px";
+    placerpopup();
 });
+
+window.addEventListener('resize', function(){
+    placerpopup();
+});
+
+function placerpopup(){
+    const ecranpourpopup = document.getElementById("ecranpourpop-up");
+    const popup = document.getElementById("pop-up");
+
+    ecranpourpopup.style.top = window.pageYOffset + "px";
+    ecranpourpopup.style.left = document.getElementById("nav-bar").offsetWidth + "px";
+
+    ecranpourpopup.style.height = window.innerHeight - document.getElementById("header").offsetHeight + "px";
+    ecranpourpopup.style.width = 0.982*(window.innerWidth - document.getElementById("nav-bar").offsetWidth) + "px";
+};
 
 // Permet à la page d'afficher le workflow
 function afficherworkflow(id){};
