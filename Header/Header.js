@@ -4,9 +4,9 @@ import {signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.j
 //const email = user.email;
 const logoutButton = document.querySelector('#logoutButton');
 
-$(function () {
-    $("[rel='tooltip']").tooltip();
-  });
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 
    export  const showNavbar = (toggleId, navId, bodyId, headerId) => {
         const nav = document.getElementById(navId),
