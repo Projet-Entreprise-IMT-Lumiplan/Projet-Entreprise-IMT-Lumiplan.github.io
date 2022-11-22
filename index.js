@@ -8,13 +8,14 @@ import { getDatabase, ref, set, child, update, remove, onValue } from "https://w
 // https://firebase.google.com/docs/web/setup#available-libraries
 //Connection with our firebase page base on apiKey
  const firebaseConfig = {
- 	    apiKey: "AIzaSyAqpi_Ngce7eIpiVjYjq3-Kra58mXSSe2I",
+ 	apiKey: "AIzaSyAqpi_Ngce7eIpiVjYjq3-Kra58mXSSe2I",
     	authDomain: "lumos-4786c.firebaseapp.com",
     	projectId: "lumos-4786c",
-   	  storageBucket: "lumos-4786c.appspot.com",
+   	storageBucket: "lumos-4786c.appspot.com",
     	messagingSenderId: "1048784963409",
     	appId: "1:1048784963409:web:bd290641e2a69b9c4f7570",
-	    measurementId: "G-KZZDY7FP1E"
+	measurementId: "G-KZZDY7FP1E",
+	databaseURL: "https://lumos-4786c-default-rtdb.europe-west1.firebasedatabase.app",
  };
 
 // Initialize Firebase
