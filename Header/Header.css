@@ -9,6 +9,7 @@
     --normal-font-size: 1rem;
     --z-fixed: 100;
     --nav-width: 5rem;
+
 }
 
 * {
@@ -125,28 +126,9 @@ a {
     background-color: var(--white-color)
 }
 
-.tooltip-inner {
-    background-color: #383535; 
-    transform:translate3d(5px,-60px,0);
-    
+.custom-tooltip{
+    --bs-tooltip-bg: #383535; 
 }
-.tooltip.bs-tooltip-right .arrow:before {
-    border-right-color: #383535 !important;
-    transform:translate3d(5px,-60px,0);
-}
-.tooltip.bs-tooltip-left .arrow:before {
-    border-right-color: #383535!important;
-    transform:translate3d(5px,-60px,0);
-}
-.tooltip.bs-tooltip-bottom .arrow:before {
-    border-right-color: #383535 !important;
-    transform:translate3d(5px,-60px,0);
-}
-.tooltip.bs-tooltip-top .arrow:before {
-    border-right-color: #383535 !important;
-    transform:translate3d(5px,-60px,0);
-}
-
 
 
 @media screen and (min-width: 768px) {

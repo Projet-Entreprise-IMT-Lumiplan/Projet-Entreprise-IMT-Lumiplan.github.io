@@ -1,0 +1,71 @@
+
+//Commande Firebase pour JS
+//Avec db = getDatabase(app) dans index.js
+
+import { getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+
+//1)
+//Opérations d'écriture dans la BDD
+
+
+//Le try/catch est optionnel mais utile en cas d'erreur de connexion internet
+try {
+    //userId = $Identifiant Collaborateur
+    //userId et outilsId sont toujours des entiers de 0 à n avec n le nombre respectif de collab ou outils
+    
+    const db = getDatabase();
+    
+    userId= 5;
+    pathData = 'dataEmployeOutils/${userId}';
+    set(ref(db, pathData), {
+      Nom: "LeJaune",
+      Prenom: "Christophane",
+      CodeNatureDeContrat : "CDI",
+      DateDebutContrat: "13/6/2022",
+      DateFinContrat: "28/12/2022",
+  });
+  
+  //Si la valeur de userId n'existe pas, cette commande crée un nouveau document avec userId comme clé
+  //Sinon la valeur existe, ce code modifie la valeur des clés indiquées
+  //Ce n'est pas obligatoire de mettre toutes les clés sauf si on veut crée un arbre complet
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+
+//2) 
+//Lire les données une fois  
+//Exemple
+
+//Attention il y un ref ici pour appeler getDatabase()
+const dbRef = ref(getDatabase());
+
+userId = 4;
+pathData = 'dataEmployeOutils/${userId}/Prenom';
+//Ou pathData = 'dataEmployeOutils' + userId + 'Prenom';
+get(child(dbRef, pathDataBase)).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
+//3)
+//Ecoutez les évenements de la valeur
+//Listener
+
+const db = getDatabase();
+
+//onValue() est appelée chaque fois que des données sont modifiées 
+//au niveau de la référence de base de donnée spécifiée
+//Préférable d'utiliser onValue() uniquement pour le niveau le plus bas de la BDD, pas la racine
+outilsId = 6;
+const dataOutilsRef = ref(db, 'dataOutils/' + outilsId + '/Referent');
+//Si le referent de l'outil n°6 est modifié alors on envoie un message à la DSI
+onValue(dataOutilsRef, (snapshot) => {
+  const data = snapshot.val();
+  sendMessageToDSI(data);
+});
+

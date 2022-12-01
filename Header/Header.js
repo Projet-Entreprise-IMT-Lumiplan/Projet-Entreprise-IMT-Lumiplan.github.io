@@ -2,11 +2,11 @@ import {auth} from '../index.js';
 import {signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
 
 //const email = user.email;
-const logoutButton = document.querySelector('#logoutButton');
 
-$(function () {
-    $("[rel='tooltip']").tooltip();
-  });
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 
    export  const showNavbar = (toggleId, navId, bodyId, headerId) => {
         const nav = document.getElementById(navId),
@@ -58,11 +58,16 @@ $(function () {
     linkColor.forEach(l => l.addEventListener('click', colorLink))
 
 /* LOG OUT */
-    
-const logout = async () => {
-  await signOut(auth);
-}
-logoutButton.addEventListener("click", logout);
+const logoutButton = document.querySelector('#logOut'); 
+
+logoutButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut().then(()=>{
+        console.log('user signed out')
+    })
+})
+
+
 
 
 
