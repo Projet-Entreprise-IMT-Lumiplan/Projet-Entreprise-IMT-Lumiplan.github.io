@@ -76,7 +76,7 @@ function afficherecherche(value, valeur){
                     afficherpopup1(poster.getAttribute("id"));
                 });
                 zone1.appendChild(poster);
-            } else {
+            } else if (value[j]["Etat"] == 2) {
                 poster.addEventListener("click", function(event){
                     event.preventDefault();
                     afficherpopup2(poster.getAttribute("id"));
@@ -94,14 +94,29 @@ function afficherformulaire(id){
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire ou le workflow
 function afficherpopup1(id){
-    document.getElementById(id).innerHTML = "On affiche un pop-up de choix";
     afficherpopup();
+    const btngauche = document.getElementById("btngauche");
+    btngauche.innerHTML = "Edition Formulaire";
+    btngauche.addEventListener("click", function(event){
+        event.preventDefault();
+        // Open Formulaire
+    });
+    const btndroit = document.getElementById("btndroit");
+    btndroit.innerHTML = "Accès workflow";
+    btndroit.addEventListener("click", function(event){
+        event.preventDefault();
+        // Open Workflow
+    });
+
+    placerpopup();
 };
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire d'entré ou de sortie
 function afficherpopup2(id){
     document.getElementById(id).innerHTML = "On affiche un autre pop-up de choix";
     afficherpopup();
+    
+    placerpopup();
 };
 
 // Factorisation de la création d'un pop-up vierge, mobile, au centre du browser
@@ -118,9 +133,26 @@ function afficherpopup(){
         event.preventDefault();
         event.stopPropagation();
     });
+    const popupgauche = document.createElement("div"); // Crée les deux zones du pop-up
+    popupgauche.setAttribute("id", "popupgauche")
+    const popupdroit = document.createElement("div");
+    popupdroit.setAttribute("id", "popupdroite")
+
+    const btngauche = document.createElement("btn"); // Crée les deux boutons du pop-up (vides)
+    btngauche.setAttribute("id", "btngauche");
+    btngauche.setAttribute("class", "btn");
+    const btndroit = document.createElement("btn");
+    btndroit.setAttribute("id", "btndroit");
+    btndroit.setAttribute("class", "btn");
+
+    popupgauche.appendChild(btngauche);
+    popupdroit.appendChild(btndroit);
+    popup.appendChild(popupgauche);
+    popup.appendChild(popupdroit);
     ecranpourpopup.appendChild(popup);
     document.getElementById("espacedetravaille").appendChild(ecranpourpopup);
-    placerpopup();
+
+    // placerpopup();
 };
 
 // Permet aux pop-up de rester au centre de l'écran

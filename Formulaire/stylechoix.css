@@ -51,6 +51,8 @@ h1
 {
     /* background-color: white; */
     position: absolute;
+    height: 100vh;
+    width: 98.2vw; /* Si plus élevé, crée des problèmes de scroll infini vers le bas */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,10 +62,40 @@ h1
 #pop-up
 {
     background-color: white;
-    position: absolute;
     height: 20vh;
     width: 28vw;
     border: 1px solid black;
     border-radius: 6px;
     box-shadow: 2px 2px 2px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#popupgauche
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#popupdroite
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn
+{
+    padding: 5px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border : 2px solid black;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px;
+}
+
+.btn:hover
+{
+    box-shadow: 0 0 6px;
 }
