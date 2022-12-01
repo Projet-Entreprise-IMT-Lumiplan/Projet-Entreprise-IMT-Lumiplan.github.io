@@ -9,6 +9,17 @@ window.onload = function(){
     .then(response => response.ok ? response.json(): null)
     .then(value => afficherecherche(value, "")) // On fait afficher les collaborateurs
     .catch(err => document.getElementById('Personne').innerHTML = err);
+
+    // Permet de fermer un onglet de formulaire
+    document.getElementById("h1.0").addEventListener("click", function(){
+        document.getElementById("zone0").innerHTML = null;
+    });
+    document.getElementById("h1.1").addEventListener("click", function(){
+        document.getElementById("zone1").innerHTML = null;
+    });
+    document.getElementById("h1.2").addEventListener("click", function(){
+        document.getElementById("zone2").innerHTML = null;
+    });
 };
 
 // Modifier les formulaire à concerver lors d'une recherche par Nom Prénom
