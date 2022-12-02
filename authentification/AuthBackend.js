@@ -21,7 +21,7 @@ const loginEmailPassword = async() => {
     const userCredential = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
     //redirection towards the correct folder
     window.location.replace("./Logiciels/index.html");
-    user = userCredential.user;
+    userId = userCredential.user.userId;
     console.log(userCredential);
 
   } catch(error){
@@ -36,10 +36,10 @@ const loginEmailPassword = async() => {
 signInButton.addEventListener('click', loginEmailPassword);
 
 
-/*
+
 export const showLoginState = (user) => {
-  lblAuthState.innerHTML = `You're logged in as ${user.displayName} (uid: ${user.uid}, email: ${user.email}) `
+  lblAuthState.innerHTML = `You're logged in as (uid: ${user.uid}, email: ${user.email}) `
 }
 
-hideLoginError()
-*/
+
+//auth.hideLoginError()

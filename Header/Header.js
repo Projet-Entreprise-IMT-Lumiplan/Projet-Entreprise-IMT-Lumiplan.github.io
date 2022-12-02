@@ -1,7 +1,18 @@
-import {auth} from '../index.js';
-import {signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import {auth, db} from '../index.js';
+import {signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
 
-//const email = user.email;
+/*
+//récupère les données
+onAuthStateChanged(auth, (user)=>{
+    if(user){
+        //user sign in 
+        uid=user.uid;
+        console.log(uid)
+    }else{
+        //user sign out
+    }
+})
+*/
 
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -64,7 +75,11 @@ logoutButton.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut().then(()=>{
         console.log('user signed out')
-    })
+        window.location.replace('../index.html')
+    }).catch((error)=>{
+        console.log('an error happened')
+    });
+
 })
 
 
