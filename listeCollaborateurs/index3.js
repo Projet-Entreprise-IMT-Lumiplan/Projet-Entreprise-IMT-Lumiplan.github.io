@@ -1,12 +1,4 @@
 // Récupération des données depuis le fichier JSON
-const reponse = await fetch("donneeOutils.json");
-const data = await reponse.json();
-const logiciels = data.data;
-
-const reponseContrats = await fetch("donneeContrats.json");
-const dataContrats = await reponseContrats.json();
-const contrats = dataContrats.data;
-
 const reponseCollab = await fetch("EmployesOutils.json");
 const dataCollab = await reponseCollab.json();
 const collab = dataCollab.data;
