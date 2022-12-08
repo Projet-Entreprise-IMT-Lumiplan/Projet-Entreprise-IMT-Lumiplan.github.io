@@ -19,7 +19,7 @@ for (let i = 0; i < collab.length; i++) {
 
   // TITRE
   const nomElement = document.createElement("h2");
-  nomElement.innerText = collab[i].Nom+" "+collab[i].Prenom;
+  nomElement.innerText = collab[i].Nom.toUpperCase()+" "+collab[i].Prenom[0].toUpperCase()+collab[i].Prenom.slice(1).toLowerCase();
   pieceElement.appendChild(nomElement);
   sectionFiches.appendChild(pieceElement);
 }
@@ -33,7 +33,7 @@ exampleModal.addEventListener("show.bs.modal", (event) => {
 
   // TITRE
   const modalTitle = exampleModal.querySelector(".modal-title");
-  modalTitle.textContent = collab[index].Nom+" "+collab[index].Prenom;
+  modalTitle.textContent = collab[i].Nom.toUpperCase()+" "+collab[i].Prenom[0].toUpperCase()+collab[i].Prenom.slice(1).toLowerCase();
 
   // INFOS
   const modalBodyInfos = exampleModal.querySelector(".infoTab");
