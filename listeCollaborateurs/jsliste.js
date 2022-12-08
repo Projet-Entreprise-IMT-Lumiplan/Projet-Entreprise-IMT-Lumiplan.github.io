@@ -68,15 +68,6 @@ exampleModal.addEventListener("show.bs.modal", (event) => {
   modalBodyLogiciels.innerHTML = "";
   modalBodyLogiciels.setAttribute("class", "modal-body logicielTab");
   const newFormLogiciels = document.createElement("form");
-  //console.log(Object.values(collab[0])[2]);
-  
-  for (const [key, value] of Object.entries(collab[index])) {
-    console.log(Object.keys(collab[1])[1]);
-    console.log(Object.values(collab[1])[1]);
-    if(Object.keys(collab[index])=="Date Fin Contrat") {
-      "a";
-    }
-  }
 
   for (const [key, value] of Object.entries(collab[index])) {
     const newItem = document.createElement("div");
