@@ -9,11 +9,9 @@ const dataContrats = await reponseContrats.json();
 const contrats = dataContrats.data;
 
 
-console.log("Alerte1");
 //Récupération des données depuis FireBase
 //import {getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
 //const dbRef = ref(getDatabase());
-console.log("Alerte2");
 
 
 
@@ -21,7 +19,6 @@ console.log("Alerte2");
 for (let i = 0; i < logiciels.length; i++) {
   //let toolId = i;
   console.log(i);
-	console.log("Alerte" + i);
   // Récupération de l'élément du DOM qui accueillera les fiches
   const sectionFiches = document.querySelector(".fiches");
 
