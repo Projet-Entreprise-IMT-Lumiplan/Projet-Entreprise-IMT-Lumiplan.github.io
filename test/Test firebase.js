@@ -8,9 +8,11 @@ const reponseContrats = await fetch("donneeContrats.json");
 const dataContrats = await reponseContrats.json();
 const contrats = dataContrats.data;
 
+console.log("Json importé");
 
 //Récupération des données depuis FireBase
 import {getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+console.log("Firebase importée");
 const dbRef = ref(getDatabase());
 let idee = get(child(dbRef, 'dataOutil/1/outils')).then((snapshot) => {
   if (snapshot.exists()) {
@@ -21,11 +23,9 @@ let idee = get(child(dbRef, 'dataOutil/1/outils')).then((snapshot) => {
 }).catch((error) => {
   console.error(error);
 });
+console.log("idee");
 console.log(idee);
     
-console.log('Alerte');
-console.log(1);
-
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
   //let toolId = i;
