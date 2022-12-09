@@ -21,8 +21,6 @@ const loginEmailPassword = async() => {
     const userCredential = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
     //redirection towards the correct folder
     window.location.replace("./Logiciels/index.html");
-    userId = userCredential.user.userId;
-    console.log(userCredential);
 
   } catch(error){
       console.log(error);
