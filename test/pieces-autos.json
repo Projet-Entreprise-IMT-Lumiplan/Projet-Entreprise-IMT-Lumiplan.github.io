@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nom": "Photoshop",
+        "prix": 60,
+        "categorie": "Optiques",
+        "image": "images/photoshop.png",
+        "description": "Pas de license à renouveler",
+        "disponibilite": true
+    },
+    {
+        "id": 2,
+        "nom": "Figma",
+        "prix": 40,
+        "categorie": "Freinage",
+        "image": "images/figma.png",
+        "description": "J'aime la galette",
+        "disponibilite": true
+    },
+    {
+        "id": 3,
+        "nom": "After Effect",
+        "prix": 5.49,
+        "categorie": "Optiques",
+        "image": "images/aftereffect.png",
+        "description": "Quand elle est bien faite",
+        "disponibilite": false
+    }
+]

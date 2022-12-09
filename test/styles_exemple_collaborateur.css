@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+
+
+header {
+
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #000000;
+  text-align: center;
+  color: white;
+}
+
+.fiches {
+  max-width: 100vw;
+  max-height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fiches h2 {
+  font-size: 0.9em;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  flex: 0 0 calc(11% - 28px);
+  padding: 5px;
+  margin: 5px;
+}
+.fiches img {
+  max-width: 70px;
+}
+.fiches p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+img {
+    max-width: 500px;
+}
+
+img[class="disabledbutton"] {
+    filter: contrast(20%);
+}
+
+img[class*="button"] {
+    max-width: 150px;
+}
