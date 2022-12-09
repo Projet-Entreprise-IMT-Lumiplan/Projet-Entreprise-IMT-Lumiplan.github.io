@@ -12,7 +12,17 @@ const contrats = dataContrats.data;
 //Récupération des données depuis FireBase
 import {getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
 const dbRef = ref(getDatabase());
-
+let idee = get(child(dbRef, 'dataOutil/1/outils')).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+console.log(idee);
+    
 console.log('Alerte');
 console.log(1);
 
