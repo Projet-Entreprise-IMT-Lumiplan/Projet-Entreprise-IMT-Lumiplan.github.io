@@ -1,0 +1,314 @@
+﻿{
+    "data": [
+        {
+            "Identifiant": 1,
+            "Outils": "Jira",
+            "Description": "",
+            "Mots clés recherche": "Ticketing",
+            "Référent": "Alice Nicolas",
+            "Equipe admin": "VBE, ANI, SCH, ASA, TCA, PBR, ORI",
+            "KU": "NFO, NGD",
+            "Intégrateur": "Tweeby"
+        },
+        {
+            "Identifiant": 2,
+            "Outils": "Confluence",
+            "Description": "",
+            "Mots clés recherche": "Gestion documentaire",
+            "Référent": "Alice Nicolas",
+            "Equipe admin": "PBR",
+            "KU": "",
+            "Intégrateur": "Tweeby"
+        },
+        {
+            "Identifiant": 3,
+            "Outils": "Trello",
+            "Description": "",
+            "Mots clés recherche": "Gestion de projet, kanban",
+            "Référent": "Patrick Brouchet",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": "Tweeby"
+        },
+        {
+            "Identifiant": 4,
+            "Outils": "Salesforce",
+            "Description": "",
+            "Mots clés recherche": "CRM, Avant-vente, clien, opportunités, contrats, requêtes, pistes,",
+            "Référent": "Fabien Soulié",
+            "Equipe admin": "FSO, AGA",
+            "KU": "BSI, ASA",
+            "Intégrateur": "Hardis Group"
+        },
+        {
+            "Identifiant": 5,
+            "Outils": "Praxedo",
+            "Description": "",
+            "Mots clés recherche": "Field Service, terrain, technicien, interventions, gestion des tournées, planning",
+            "Référent": "Axel Gaborit",
+            "Equipe admin": "FSO, AGA",
+            "KU": "BLE",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 6,
+            "Outils": "Sylob",
+            "Description": "",
+            "Mots clés recherche": "ERP, Supply, Achats, base articles",
+            "Référent": "Axel Gaborit",
+            "Equipe admin": "FSO, MNG, ANI, AGA",
+            "KU": "LKE",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 7,
+            "Outils": "Sciforma",
+            "Description": "",
+            "Mots clés recherche": "Gestion de projet, GANTT, Planning, Plan de charges, Saisie des temps",
+            "Référent": "Axel Gaborit",
+            "Equipe admin": "NFO, FSO, AGA",
+            "KU": "FSO, ABO",
+            "Intégrateur": "ACI Projets"
+        },
+        {
+            "Identifiant": 8,
+            "Outils": "MS D365",
+            "Description": "Microsoft Dynamics 365",
+            "Mots clés recherche": "ERP, Supply, Achats, base articles",
+            "Référent": "?",
+            "Equipe admin": "ANI, MNG, FSO, AGA",
+            "KU": "JGO, LKE, VBO2, SBO,MPA, KBE, AEN, ANI, FHA, KBA, DLE, DLC, JPL, CDE, WNG, MON, VGO, TLA, CBL, NDU, CAL, MMO, EMA",
+            "Intégrateur": "Syd"
+        },
+        {
+            "Identifiant": 9,
+            "Outils": "Solidworks",
+            "Description": "",
+            "Mots clés recherche": "CAO, plan",
+            "Référent": "?",
+            "Equipe admin": "",
+            "KU": "DLC, AEN, FMA",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 10,
+            "Outils": "Altium",
+            "Description": "",
+            "Mots clés recherche": "CAO, plan",
+            "Référent": "",
+            "Equipe admin": "",
+            "KU": "AEN, FMA",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 11,
+            "Outils": "Cleemy",
+            "Description": "",
+            "Mots clés recherche": "SI RH, Note de frais",
+            "Référent": "Ludivine Kerdraon",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 12,
+            "Outils": "Figgo",
+            "Description": "",
+            "Mots clés recherche": "",
+            "Référent": "",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 13,
+            "Outils": "Pagga",
+            "Description": "",
+            "Mots clés recherche": "",
+            "Référent": "",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 14,
+            "Outils": "Poplee",
+            "Description": "",
+            "Mots clés recherche": "",
+            "Référent": "",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": ""
+        },
+        {
+            "Identifiant": 15,
+            "Outils": "RH Solutions",
+            "Description": "",
+            "Mots clés recherche": "",
+            "Référent": "",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": "PeopleSpheres"
+        },
+        {
+            "Identifiant": 16,
+            "Outils": "Sage",
+            "Description": "",
+            "Mots clés recherche": "",
+            "Référent": "",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": "Mercuria"
+        },
+        {
+            "Identifiant": 17,
+            "Outils": "Ededoc",
+            "Description": "",
+            "Mots clés recherche": "",
+            "Référent": "Axel Gaborit",
+            "Equipe admin": "AGA",
+            "KU": "DBL, DBA",
+            "Intégrateur": "Koesio"
+        },
+        {
+            "Identifiant": 18,
+            "Outils": "GWB Standard",
+            "Description": "Google Workplace Business Standard",
+            "Mots clés recherche": "E-mail, mail, google, workspace",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO, VBE",
+            "KU": "Groupe",
+            "Intégrateur": "Clicc"
+        },
+        {
+            "Identifiant": 19,
+            "Outils": "GWB Starter",
+            "Description": "Google Workplace Business Starter",
+            "Mots clés recherche": "E-mail, mail, google, workspace",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO, VBE",
+            "KU": "Groupe",
+            "Intégrateur": "Clicc"
+        },
+        {
+            "Identifiant": 20,
+            "Outils": "IntelliJ",
+            "Description": "",
+            "Mots clés recherche": "jet brains, developpeur, code",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "Developpeurs",
+            "Intégrateur": "Jet Brains"
+        },
+        {
+            "Identifiant": 21,
+            "Outils": "Adobe CC",
+            "Description": "",
+            "Mots clés recherche": "adobe",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "Equipe Design + Affaire Appli",
+            "Intégrateur": "Adobe"
+        },
+        {
+            "Identifiant": 22,
+            "Outils": "Adobe Pro DC",
+            "Description": "",
+            "Mots clés recherche": "adobe, pdf",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "JGO, OSA, API, FHA",
+            "Intégrateur": "Adobe"
+        },
+        {
+            "Identifiant": 23,
+            "Outils": "Illustrator",
+            "Description": "",
+            "Mots clés recherche": "adobe",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "PBI",
+            "Intégrateur": "Adobe"
+        },
+        {
+            "Identifiant": 24,
+            "Outils": "Figma",
+            "Description": "",
+            "Mots clés recherche": "editeur graphique vectriel, prototypage",
+            "Référent": "Patrcik Brouchet ?",
+            "Equipe admin": "",
+            "KU": "Equipe UX/UI",
+            "Intégrateur": "Figma"
+        },
+        {
+            "Identifiant": 25,
+            "Outils": "Sonar",
+            "Description": "",
+            "Mots clés recherche": "code, analyse, test",
+            "Référent": "",
+            "Equipe admin": "GSI",
+            "KU": "GSI",
+            "Intégrateur": "SonarSource"
+        },
+        {
+            "Identifiant": 26,
+            "Outils": "Simple Localize",
+            "Description": "",
+            "Mots clés recherche": "software",
+            "Référent": "",
+            "Equipe admin": "",
+            "KU": "",
+            "Intégrateur": "Simple Localize"
+        },
+        {
+            "Identifiant": 27,
+            "Outils": "Keil OS Fixe",
+            "Description": "",
+            "Mots clés recherche": "programmation, compilation, developpeur",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "Equipe BE Panneux, BE Domene",
+            "Intégrateur": "Neomore"
+        },
+        {
+            "Identifiant": 28,
+            "Outils": "Keil OS Flex",
+            "Description": "",
+            "Mots clés recherche": "programmation, compilation, developpeur",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "Equipe BE Panneux, BE Domene",
+            "Intégrateur": "Neomore"
+        },
+        {
+            "Identifiant": 29,
+            "Outils": "TeamViewer",
+            "Description": "",
+            "Mots clés recherche": "prise en main, distance",
+            "Référent": "Vincent Beaumont",
+            "Equipe admin": "VBE",
+            "KU": "Groupe",
+            "Intégrateur": "Teamviewer"
+        },
+        {
+            "Identifiant": 30,
+            "Outils": "Visio",
+            "Description": "",
+            "Mots clés recherche": "cartographie, schema",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "Groupe",
+            "Intégrateur": "Microsoft"
+        },
+        {
+            "Identifiant": 31,
+            "Outils": "MS Project",
+            "Description": "",
+            "Mots clés recherche": "gestion de projet",
+            "Référent": "Frederique Rogandji",
+            "Equipe admin": "FRO",
+            "KU": "OSA",
+            "Intégrateur": "Microsoft"
+        }
+    ]
+}
