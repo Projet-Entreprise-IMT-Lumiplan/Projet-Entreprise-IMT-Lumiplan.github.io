@@ -23,6 +23,8 @@ let toolName = get(child(dbRef, 'dataOutils/${Id}/Outils')).then((snapshot) => {
   }).catch((error) => {
     console.error(error);
   }); 
+  console.log(toolName);
+
 
 
 
