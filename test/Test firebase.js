@@ -11,7 +11,8 @@ const contrats = dataContrats.data;
 console.log("Json importé");
 
 //Récupération des données depuis FireBase
-import {getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+import {getDatabase, ref, set, child, update, remove, onValue, get } from "firebase/database";
+import {db} from "../index.js";
 console.log("Firebase importée");
 const dbRef = ref(getDatabase());
 let idee = get(child(dbRef, 'dataOutil/1/outils')).then((snapshot) => {
