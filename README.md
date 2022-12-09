@@ -12,5 +12,5 @@
 
 [Tuto](https://projet-entreprise-imt-lumiplan.github.io/tuto)
 
-[Test Firebase](https://projet-entreprise-imt-lumiplan.github.io/test/index.html)
+[Test Firebase](https://projet-entreprise-imt-lumiplan.github.io/test/)
 
