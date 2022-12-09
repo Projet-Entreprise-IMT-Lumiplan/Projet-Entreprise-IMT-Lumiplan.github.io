@@ -10,8 +10,8 @@ const contrats = dataContrats.data;
 
 
 //Récupération des données depuis FireBase
-//import {getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
-//const dbRef = ref(getDatabase());
+import {getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+const dbRef = ref(getDatabase());
 
 console.log('Alerte');
 console.log(1);
