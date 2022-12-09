@@ -31,9 +31,9 @@ function statut(dbRef, email) {
         });
     });
     */
-    get(child(dbRef, `dataEmployeOutils/0`)).then((snapshot) => {
+    get(child(dbRef, 'dataEmployeOutils/0/Profil')).then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot.val().Profil);
+        console.log(snapshot.val());
       } else {
         console.log("No data available");
       }
@@ -65,8 +65,8 @@ function statut(dbRef, email) {
     } 
    
 
-const dBRef = ref(getDatabase())
-statut(dBRef, emailConnected)
+const dBRef = ref(db);
+statut(dBRef, emailConnected);
 
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')

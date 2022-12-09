@@ -37,6 +37,7 @@ export const auth = getAuth(app);
 
 
 
+
 // Log out
 const logout = async () => {
   await signOut(auth);
