@@ -13,7 +13,7 @@ const contrats = dataContrats.data;
 //import {getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
 //const dbRef = ref(getDatabase());
 
-
+console.log("Alerte");
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
