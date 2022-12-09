@@ -1,9 +1,8 @@
 // Import the functions we need from firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
-//import { getFirestore } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
-import { getAuth} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
-import { getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth} from "firebase/auth";
+import { getDatabase, ref, set, child, update, remove, onValue } from "firebase/database";
 	
 // https://firebase.google.com/docs/web/setup#available-libraries
 //Connection with our firebase page base on apiKey
@@ -31,19 +30,6 @@ const analytics = getAnalytics(app);
 export const db = getDatabase(app);
 export const auth = getAuth(app);
 
-		
-
-/*
-
-
-
-
-// Log out
-const logout = async () => {
-  await signOut(auth);
-}
-
-*/
 
 
 

@@ -1,6 +1,6 @@
 import { auth, db } from '../index.js';
-import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
-import { getDatabase, ref, set, child, update, remove, onValue,get } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { getDatabase, ref, set, child, update, remove, onValue,get } from "firebase/database";
 const emailConnected = ''; //valeur par défaut
 const statutEmploye = ''; //statut par défaut
 

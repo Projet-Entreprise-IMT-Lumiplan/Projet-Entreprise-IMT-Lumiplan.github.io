@@ -1,4 +1,4 @@
-import { AuthErrorCodes, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import { AuthErrorCodes, signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../index.js';
 
 

@@ -2,7 +2,7 @@
 //Commande Firebase pour JS
 //Avec db = getDatabase(app) dans index.js
 
-import { getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+import { getDatabase, ref, set, child, update, remove, onValue } from "firebase/database";
 
 //1)
 //Opérations d'écriture dans la BDD
