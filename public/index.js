@@ -1,8 +1,8 @@
 // Import the functions we need from firebase
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth} from "firebase/auth";
-import { getDatabase, ref, set, child, update, remove, onValue } from "firebase/database";
+import { initializeApp } from "/firebase/app";
+import { getAnalytics } from "/firebase/analytics";
+import { getAuth} from "/firebase/auth";
+import { getDatabase, ref, set, child, update, remove, onValue } from "/firebase/database";
 	
 // https://firebase.google.com/docs/web/setup#available-libraries
 //Connection with our firebase page base on apiKey
