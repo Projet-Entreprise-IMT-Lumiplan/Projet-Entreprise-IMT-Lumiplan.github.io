@@ -17,7 +17,6 @@ console.log("Firebase importé");
 let pathDataBase = "dataOutils";
 const dbRef = ref(db);
 
-let a = 1;
 /*
 get(child(dbRef, pathDataBase)).then((snapshot) => {
         //console.log(email)
@@ -37,7 +36,7 @@ console.log(emailId);
 
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
-	  const a = snapchot.child("1").child('Outils').val();
+	  const outil = snapchot.child("1/Outils").val();
 	  const length = snapchot.length; 
 	  console.log("oui");
     console.log(snapshot.val());
@@ -49,7 +48,7 @@ get(child(dbRef, pathDataBase)).then((snapshot) => {
   console.log("error");
 });
 console.log("Nom outil n°2");
-console.log(a);
+console.log(outil);
 console.log("Nombre d'outils");
 console.log(length);
 
