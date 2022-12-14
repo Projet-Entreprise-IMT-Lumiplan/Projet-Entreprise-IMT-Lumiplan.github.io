@@ -10,20 +10,16 @@ const contrats = dataContrats.data;
 console.log("Json importé");
 
 //Récupération des données depuis Firebase
-import { getDatabase, ref, set, child, update, remove, onValue, get } from "firebase/database";
-const dbRef = ref(getDatabase());
+import {getDatabase, ref, set, child, update, remove, onValue, get } from "firebase/database";
+import {db} from "../index.js"
 console.log("firebase importé");
-let i = get(child(dbRef, dataOutils/1/Outils)).then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
+const firebaseRef = ref(db, "dataOutils");
+get(firebaseRef, function(snapshot) {
+  snapshot.forEach(function(element) { //element.value.prenom pour aller chercher le prenom
+    console.log(element.val()["Prenom"]);
+  })
 });
-console.log("Nom de l'outil 1 récupéré");
-console.log(i);
+
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
