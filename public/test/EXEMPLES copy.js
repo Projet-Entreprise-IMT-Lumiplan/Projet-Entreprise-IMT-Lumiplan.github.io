@@ -17,9 +17,10 @@ console.log("Firebase importé");
 let pathDataBase = "dataOutils";
 const dbRef = ref(db);
 
+let a;
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
-	  let a = snapchot[0][Outils].val();
+	  a = snapchot[0][Outils].val();
     console.log(snapshot.val());
   } else {
     console.log("No data available");
