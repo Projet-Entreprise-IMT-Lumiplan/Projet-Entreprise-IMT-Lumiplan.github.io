@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>LUMOS Dashboard</title>
+  <link rel="stylesheet" href="listestyles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="#">
+  <script type="module" src="jsliste.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="../Header/Header.css" />
+  <link rel="shortcut icon" href="#">
+  <script type="module" src="../Header/Header.js">
+  </script>
+</head>
+
+<body id="body-pd">
+  <div id="headerMenu">
+    <header class="header" id="header">
+      <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+      <div class="header_img"> <img src="../assets/lumos.png" alt="logo-lumos"> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+      <nav class="nav">
+        <div>
+          <div class="nav_list">
+            <a href="../Logiciels/index.html" class="nav_link" id="cartographie_link" data-bs-toggle="tooltip" data-bs-placement="right"
+              data-bs-custom-class="custom-tooltip" title="Portail logiciels"> <i
+                class='bx bx-file nav_icon'></i></a>
+            <a href="../listeCollaborateurs/index.html" class="nav_link active" id="collaborateurs_link"
+              data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+              title="Liste des Collaborateurs"> <i class='bx bx-grid-alt nav_icon'></i> </a>
+            <a href="../Formulaire/ChoixFormulaire.html" class="nav_link" id="formulaire_link" data-bs-toggle="tooltip"
+              data-bs-placement="right" data-bs-custom-class="custom-tooltip" title="Formulaires"> <i
+                class='bx bx-file nav_icon'></i> </a>
+          </div>
+        </div> <a href="#" id="logOut" class="nav_link" data-bs-toggle="tooltip" data-bs-placement="right"
+          data-bs-custom-class="custom-tooltip" title="Sign Out">
+          <i class='bx bx-log-out nav_icon'></i> </a>
+      </nav>
+    </div>
+  </div>
+
+
+  <div id="container">
+    <div id="search">
+        <label for="searchInput">Collaborateur :</label>
+        <input id="searchInput" type="text">
+    </div>
+    <section class="fiches">
+    </section>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h1 class="modal-title fs-3 fw-bold w-100 text-center" id="exampleModalLabel">Nom du collaborateur</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!--  tabs  -->
+        <nav>
+          <div class="nav nav-pills flex-row nav-justified" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-infos-tab" data-bs-toggle="tab" data-bs-target="#nav-infos"
+              type="button" role="tab" aria-controls="nav-infos" aria-selected="true">Infos</button>
+            <button class="nav-link" id="nav-logiciels-tab" data-bs-toggle="tab" data-bs-target="#nav-logiciels"
+              type="button" role="tab" aria-controls="nav-logiciels" aria-selected="false">Logiciels</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-infos" role="tabpanel" aria-labelledby="nav-infos-tab"
+            tabindex="0">
+            <!--  infos  -->
+            <div class="modal-body infoTab">...</div>
+          </div>
+          <div class="tab-pane fade" id="nav-logiciels" role="tabpanel" aria-labelledby="nav-logiciels-tab" tabindex="0">
+            <!--  logiciels  -->
+            <div class="modal-body logicielTab">...</div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <button type="button" class="btn btn-primary">Sauvegarder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+
+</html>

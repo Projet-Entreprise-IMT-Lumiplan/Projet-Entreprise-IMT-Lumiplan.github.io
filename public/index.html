@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lumos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">           
+	<link rel="stylesheet" href="index.css" />
+	<script type="module" src="./authentification/AuthBackend.js"></script>
+	<script type="module" src="./index.js"></script>
+	
+</head>
+<body>	
+	<div id = "login">
+	
+	<img src="./assets/logo-lumiplan.png" alt="logo-lumiplan"  id="logo-lumiplan"/>
+	<h1> Bienvenue sur </h1>
+	<img src="./assets/lumos.png" alt="logo-lumos" id="logo-lumos"/>
+	<div id="form-container">
+		<form>
+			<label for="email">Email adress</label>
+			<input type="email" placeholder="email" id="txtEmail" required/>
+			<label for="password">Password</label>
+			<input type="password" placeholder="Password" id="txtPassword" required />
+		</form>
+		<div id="divLoginError" class="group">
+        		<div id="lblLoginErrorMessage" class="errorlabel">error message</div>
+      		</div>
+		<button id="signInButton">SIGN IN</button>
+	</div>
+	</div>
+	
+	<div id="app">
+    		<script type="module" src="./index.js"></script>
+    	<form>
+      	<div class="group">
+        	<div id="lblAuthState" class="authlabel"></div>
+      	</div>
+    	</form>
+  	</div>
+	
+</body>
+
+</html>
