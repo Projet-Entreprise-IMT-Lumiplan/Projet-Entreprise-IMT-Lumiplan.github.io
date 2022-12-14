@@ -32,7 +32,7 @@ function afficher(value){
 
                 if (i%2 == 0){ //pour le moment on met juste qu'une tache sur 2 est fini il faudra une condition du type : value.tache.done  
                     rond.setAttribute("class", "rondplein");
-                    progres.innerHTML = "Tâche Terminé";
+                    progres.innerHTML = "Tâche Terminée";
                 } else {
                     rond.setAttribute("class", "rondvide");
                     progres.innerHTML = "Tâche en Cours...";
