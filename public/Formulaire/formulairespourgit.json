@@ -36,70 +36,70 @@
     },
     {
         "ID": "6",
-        "Etat": "1",
+        "Etat": "3",
         "Prenom": "MATHIEU",
         "Nom": "BESSON",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "7",
-        "Etat": "1",
+        "Etat": "3",
         "Prenom": "CEDRIC",
         "Nom": "BOUCHARD",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "8",
-        "Etat": "1",
+        "Etat": "3",
         "Prenom": "VIJAYA",
         "Nom": "BOYINA",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "9",
-        "Etat": "1",
+        "Etat": "3",
         "Prenom": "YOANN",
         "Nom": "BRABANT",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "10",
-        "Etat": "1",
+        "Etat": "3",
         "Prenom": "NADEGE",
         "Nom": "BRIAND",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "11",
-        "Etat": "1",
+        "Etat": "3",
         "Prenom": "MARC",
         "Nom": "COSSE",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "12",
-        "Etat": "1",
+        "Etat": "4",
         "Prenom": "ELODIE",
         "Nom": "COVA",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "13",
-        "Etat": "1",
+        "Etat": "4",
         "Prenom": "EDOUARD",
         "Nom": "CUNY",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "14",
-        "Etat": "1",
+        "Etat": "4",
         "Prenom": "THOMAS",
         "Nom": "DARBON",
         "Code Nature de Contrat": "CDI"
     },
     {
         "ID": "15",
-        "Etat": "1",
+        "Etat": "4",
         "Prenom": "CHRISTOPHE",
         "Nom": "DETHOOR",
         "Code Nature de Contrat": "CDI"
