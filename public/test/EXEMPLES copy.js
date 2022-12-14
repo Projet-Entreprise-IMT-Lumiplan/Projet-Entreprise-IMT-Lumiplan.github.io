@@ -7,18 +7,7 @@ const reponseContrats = await fetch("donneeContrats.json");
 const dataContrats = await reponseContrats.json();
 const contrats = dataContrats.data;
 
-console.log("Json importé");
-
-//Récupération des données depuis Firebase
-import {getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-console.log("firebase importé");
-const firebaseRef = ref(db, "dataOutils");
-get(firebaseRef, function(snapshot) {
-  snapshot.forEach(function(element) { //element.value.prenom pour aller chercher le prenom
-    console.log(element.val()["Prenom"]);
-  })
-});
-
+console.log('Json importé');
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
@@ -38,7 +27,7 @@ for (let i = 0; i < logiciels.length; i++) {
   const imageContainer = document.createElement("div");
   imageContainer.setAttribute("class", "position-relative");
   const imageElement = document.createElement("img");
-  imageElement.src = "./Frame_Icones/" + logiciels[i].Outils + ".png";
+  imageElement.src = "./Frames_Icones/" + logiciels[i].Outils + ".png";
   imageContainer.appendChild(imageElement);
   pieceElement.appendChild(imageContainer);
 
