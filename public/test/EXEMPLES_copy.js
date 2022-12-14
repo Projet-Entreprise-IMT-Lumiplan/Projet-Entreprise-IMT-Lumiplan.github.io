@@ -10,9 +10,42 @@ const contrats = dataContrats.data;
 console.log('Json importé');
 
 //Récupération des données depuis Firebase
-import { getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"; 
+import { getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import {db} from '../index.js';
 console.log("Firebase importé");
+
+let pathDataBase = "dataOutils";
+const dbRef = ref(db);
+
+/*
+get(child(dbRef,'dataEmployesOutils')).then((snapshot) => {
+        //console.log(email)
+        snapshot.forEach((idEmploye)=>{
+            const emailId = idEmploye.child('AdresseMail').val();
+            if(emailId==email){
+                console.log("egalite");
+                userStatut=idEmploye.child('Profil').val();
+                console.log(userStatut);
+            }else{
+                console.log("diff");
+            }
+        });
+    });
+*/
+
+get(child(dbRef, pathDataBase)).then((snapshot) => {
+	const outil = snapshot.child("1/Outils").val();
+	const length = snapshot.length; 
+	console.log("oui");
+	console.log(snapshot.val());
+}
+}).catch((error) => {
+  console.log("error");
+});
+console.log("Nom outil n°2");
+console.log(outil);
+console.log("Nombre d'outils");
+console.log(length);
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
