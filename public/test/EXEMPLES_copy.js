@@ -33,18 +33,22 @@ get(child(dbRef,'dataEmployesOutils')).then((snapshot) => {
     });
 */
 
-get(child(dbRef, pathDataBase)).then((snapshot) => {
-	const outil = snapshot.child("1/Outils").val();
-	const length = snapshot.length; 
-	console.log("oui");
-	console.log(snapshot.val());
+let outil = "fsiu";
+let length = 1;
+let i = get(child(dbRef, pathDataBase)).then((snapshot) => {
+  outil = snapshot.child("1/Outils").val();
+	length = snapshot.length; 
+  window.sessionStorage.setItem("outil",outil);
+  console.log(window.sessionStorage.getItem("outil"));
+  console.log("oui");
 }).catch((error) => {
   console.log("error");
 });
 console.log("Nom outil n°2");
-console.log(outil);
+console.log(window.sessionStorage.getItem("outil"));
 console.log("Nombre d'outils");
 console.log(length);
+console.log(i);
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
