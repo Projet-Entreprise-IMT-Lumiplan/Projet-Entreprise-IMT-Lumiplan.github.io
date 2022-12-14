@@ -2,6 +2,8 @@
 //Commande Firebase pour JS
 //Avec db = getDatabase(app) dans index.js
 
+import {db} from '../index.js';
+
 import { getDatabase, ref, set, child, update, remove, onValue } from "firebase/database";
 
 //1)
@@ -16,7 +18,7 @@ try {
     const db = getDatabase();
     
     userId= 5;
-    pathData = 'dataEmployeOutils/${userId}';
+    pathData = 'dataEmployesOutils/${userId}';
     set(ref(db, pathData), {
       Nom: "LeJaune",
       Prenom: "Christophane",
@@ -37,11 +39,16 @@ try {
 //Exemple
 
 //Attention il y un ref ici pour appeler getDatabase()
-const dbRef = ref(getDatabase());
+//const dbRef = ref(getDatabase());
+
 
 userId = 4;
-pathData = 'dataEmployeOutils/${userId}/Prenom';
-//Ou pathData = 'dataEmployeOutils' + userId + 'Prenom';
+pathDataBase = 'dataEmployeOutils/${userId}/Prenom';
+//Ou pathDataBase = 'dataEmployeOutils' + userId + 'Prenom';
+
+const dbRef = ref(db);
+//const dbRef = ref(db, pathDataBase);
+
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
     console.log(snapshot.val());
