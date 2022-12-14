@@ -8,7 +8,7 @@ window.onload = function(){
     })
     .then(response => response.ok ? response.json(): null)
     .then(value => afficherecherche(value, "")) // On fait afficher les collaborateurs
-    .catch(err => document.getElementById('Personne').innerHTML = err);
+    .catch(err => document.getElementById('zone0').innerHTML = err);
 
     // Permet de fermer un onglet de formulaire
     document.getElementById("h1.0").addEventListener("click", function(){
@@ -19,6 +19,12 @@ window.onload = function(){
     });
     document.getElementById("h1.2").addEventListener("click", function(){
         document.getElementById("zone2").innerHTML = null;
+    });
+    document.getElementById("h1.3").addEventListener("click", function(){
+        document.getElementById("zone3").innerHTML = null;
+    });
+    document.getElementById("h1.4").addEventListener("click", function(){
+        document.getElementById("zone4").innerHTML = null;
     });
 };
 
@@ -42,9 +48,13 @@ function afficherecherche(value, valeur){
     const zone0 = document.getElementById('zone0');
     const zone1 = document.getElementById('zone1');
     const zone2 = document.getElementById('zone2');
+    const zone3 = document.getElementById('zone3');
+    const zone4 = document.getElementById('zone4');
     zone0.innerHTML = null;
     zone1.innerHTML = null;
     zone2.innerHTML = null;
+    zone3.innerHTML = null
+    zone4.innerHTML = null;
 
     // On test pour chaque collaborateur s'il a 'valeur' dans son Nom Prénom
     for (let j=0; j<value.length; j++){
@@ -61,9 +71,7 @@ function afficherecherche(value, valeur){
             let nom = (value[j]["Nom"]).toUpperCase(); // On normalise en NOM Prenom
             let prenom = (value[j]["Prenom"]).charAt(0).toUpperCase() + (value[j]["Prenom"]).substring(1).toLowerCase();
             poster.innerHTML = nom + " " + prenom;
-            // if (poster.scrollWidth > poster.clientWidth) {
-            //     poster.style.fontSize = "xx-small";
-            // }
+
             if(value[j]["Etat"] == 0){
                 poster.addEventListener("click", function(event){
                     event.preventDefault();
@@ -82,6 +90,18 @@ function afficherecherche(value, valeur){
                     afficherpopup2(poster.getAttribute("id"));
                 })
                 zone2.appendChild(poster);
+            } else if (value[j]["Etat"] == 3) {
+                poster.addEventListener("click", function(event){
+                    event.preventDefault();
+                    afficherpopup3(poster.getAttribute("id"));
+                })
+                zone3.appendChild(poster);
+            } else if (value[j]["Etat"] == 4) {
+                poster.addEventListener("click", function(event){
+                    event.preventDefault();
+                    afficherformulairs(poster.getAttribute("id"));
+                })
+                zone4.appendChild(poster);
             }
         }
     }
@@ -89,25 +109,37 @@ function afficherecherche(value, valeur){
 
 // Permet à la page d'afficher le formulaire d'entré
 function afficherformulaire(id){
+    // Passer la valeur "En lecture" à 1
+    // Open Formulaire
     document.getElementById(id).innerHTML = "On affichera le formulaire à compléter";
+};
+
+// Permet à la page d'afficher le formulaire d'entré
+function afficherformulairs(id){
+    // Passer la valeur "En lecture" à 1
+    // Open Formulaire
+    document.getElementById(id).innerHTML = "On affichera le formulaire avec nostalgie";
 };
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire ou le workflow
 function afficherpopup1(id){
+    document.getElementById(id).innerHTML = "On affiche un pop-up de choix";
     afficherpopup();
     const btngauche = document.getElementById("btngauche");
     btngauche.innerHTML = "Edition Formulaire";
     btngauche.addEventListener("click", function(event){
         event.preventDefault();
+        // Passer la valeur "En lecture" à 1
         // Open Formulaire
     });
     const btndroit = document.getElementById("btndroit");
     btndroit.innerHTML = "Accès workflow";
     btndroit.addEventListener("click", function(event){
         event.preventDefault();
+        // Passer la valeur "En lecture" à 1
         // Open Workflow
+        window.open('workflow.html'); // Ouvre le workflow dans un nouvel onglet
     });
-
     placerpopup();
 };
 
@@ -115,7 +147,42 @@ function afficherpopup1(id){
 function afficherpopup2(id){
     document.getElementById(id).innerHTML = "On affiche un autre pop-up de choix";
     afficherpopup();
-    
+    const btngauche = document.getElementById("btngauche");
+    btngauche.innerHTML = "Consulter Formulaire d'entré";
+    btngauche.addEventListener("click", function(event){
+        event.preventDefault();
+        // Passer la valeur "En lecture" à 1
+        // Open Formulaire d'entré
+    });
+    const btndroit = document.getElementById("btndroit");
+    btndroit.innerHTML = "Commencer le Formulaire de sortie";
+    btndroit.addEventListener("click", function(event){
+        event.preventDefault();
+        // Passer la valeur "En lecture" à 1
+        // Open Formulaire de sortie
+    });
+    placerpopup();
+};
+
+// Permet d'afficher un pop-up pour choisir entre le formulaire de sortie ou le workflow
+function afficherpopup3(id){
+    document.getElementById(id).innerHTML = "On affiche encore un autre pop-up de choix";
+    afficherpopup();
+    const btngauche = document.getElementById("btngauche");
+    btngauche.innerHTML = "Edition Formulaire de sortie";
+    btngauche.addEventListener("click", function(event){
+        event.preventDefault();
+        // Passer la valeur "En lecture" à 1
+        // Open Formulaire de sortie
+    });
+    const btndroit = document.getElementById("btndroit");
+    btndroit.innerHTML = "Accès workflow";
+    btndroit.addEventListener("click", function(event){
+        event.preventDefault();
+        // Passer la valeur "En lecture" à 1
+        // Open Workflow
+        window.open('workflow.html'); // Ouvre le workflow dans un nouvel onglet
+    });
     placerpopup();
 };
 

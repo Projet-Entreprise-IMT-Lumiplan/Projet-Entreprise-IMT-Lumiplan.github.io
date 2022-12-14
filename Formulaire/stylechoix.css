@@ -93,6 +93,8 @@ h1
     border : 2px solid black;
     border-radius: 4px;
     box-shadow: 2px 2px 2px;
+    text-align: center;
+    margin: 1em
 }
 
 .btn:hover
