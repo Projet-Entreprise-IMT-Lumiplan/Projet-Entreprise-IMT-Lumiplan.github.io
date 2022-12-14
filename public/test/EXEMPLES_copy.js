@@ -35,10 +35,10 @@ console.log
 console.log(emailId);
 */
 
-let idEmploye = 1;
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
 	  const a = snapchot.child("1").child('Outils').val();
+	  const length = snapchot.length; 
 	  console.log("oui");
     console.log(snapshot.val());
   } else {
@@ -50,6 +50,8 @@ get(child(dbRef, pathDataBase)).then((snapshot) => {
 });
 console.log("Nom outil n°2");
 console.log(a);
+console.log("Nombre d'outils");
+console.log(length);
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
