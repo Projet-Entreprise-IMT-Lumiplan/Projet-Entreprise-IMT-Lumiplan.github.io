@@ -48,7 +48,7 @@ get(child(dbRef, pathDataBase)).then((snapshot) => {
 }).catch((error) => {
   console.log("error");
 });
-console.log("Nom outil n°4");
+console.log("Nom outil n°2");
 console.log(a);
 
 // Création des fiches logiciels
