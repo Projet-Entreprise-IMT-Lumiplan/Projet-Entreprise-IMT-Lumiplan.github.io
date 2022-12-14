@@ -41,6 +41,8 @@ get(child(dbRef, pathDataBase)).then((snapshot) => {
 	  console.log("oui");
     console.log(snapshot.val());
   } else {
+	  const outil = non;
+	  const lenght = non;
 	  console.log("non");
     console.log("No data available");
   }
