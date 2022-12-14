@@ -7,6 +7,24 @@ const reponseContrats = await fetch("donneeContrats.json");
 const dataContrats = await reponseContrats.json();
 const contrats = dataContrats.data;
 
+console.log("Json importé");
+
+//Récupération des données depuis Firebase
+import { getDatabase, ref, set, child, update, remove, onValue, get } from "firebase/database";
+const dbRef = ref(getDatabase());
+console.log("firebase importé");
+let i = get(child(dbRef, dataOutils/1/Outils)).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+console.log("Nom de l'outil 1 récupéré");
+console.log(i);
+
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
   console.log(i);
