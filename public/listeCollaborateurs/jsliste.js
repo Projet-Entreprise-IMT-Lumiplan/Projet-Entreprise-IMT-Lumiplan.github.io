@@ -1,10 +1,10 @@
 // Récupération des données depuis le fichier JSON
-/*const reponseCollab = await fetch("EmployesOutils.json");
+const reponseCollab = await fetch("EmployesOutils.json");
 const dataCollab = await reponseCollab.json();
-const collab = dataCollab.data;*/
+const collab = dataCollab.data;
 
 // Récupération des données via firebase
-import {getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+/*import {getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import {db} from "../index.js";
 console.log("Firebase importée");
 const dbRef = ref(getDatabase());
@@ -16,7 +16,7 @@ get(child(dbRef, 'dataEmployesOutils/${1}/Prenom')).then((snapshot) => {
   }
 }).catch((error) => {
   console.error(error);
-});
+});*/
 
 
 // Création des fiches collaborateurs
