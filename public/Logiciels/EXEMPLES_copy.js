@@ -1,3 +1,6 @@
+import{db} from '../index.js';
+import{ref,get,child} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
+
 // Récupération des données depuis le fichier JSON
 const reponse = await fetch("donneeOutils.json");
 const data = await reponse.json();
@@ -7,6 +10,43 @@ const reponseContrats = await fetch("donneeContrats.json");
 const dataContrats = await reponseContrats.json();
 const contrats = dataContrats.data;
 
+
+//Récupération des données de la firebase database
+
+const dbRef=ref(db);
+
+get(child(dbRef, 'dataOutils')).then((snapshot) => {
+   snapshot.forEach((idOutil) => {
+    const sectionFiches = document.querySelector(".fiches");
+    // BOUTON
+  const pieceElement = document.createElement("button");
+  pieceElement.type = "button";
+  pieceElement.setAttribute("class", "btn btn-light article");
+  pieceElement.setAttribute("data-bs-toggle", "modal");
+  pieceElement.setAttribute("data-bs-target", "#exampleModal");
+  pieceElement.setAttribute("data-bs-logiciel", idOutil.val());
+
+  // ICONE
+  const imageContainer = document.createElement("div");
+  imageContainer.setAttribute("class", "position-relative");
+  const imageElement = document.createElement("img");
+  imageElement.src = "./Frames_Icones/" + idOutil.child("Outils").val() + ".png";
+  imageContainer.appendChild(imageElement);
+  pieceElement.appendChild(imageContainer);
+
+  // TITRE
+  const nomElement = document.createElement("h2");
+  nomElement.innerText = idOutil.child("Outils").val();
+  pieceElement.appendChild(nomElement);
+  sectionFiches.appendChild(pieceElement);
+   });
+ 
+}).catch((error) => {
+  console.log("error");
+});
+
+
+/*
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
   console.log(i);
@@ -51,7 +91,7 @@ for (let i = 0; i < logiciels.length; i++) {
   notif.innerText = content;
   imageContainer.appendChild(notif);
 }
-
+*/
 const exampleModal = document.getElementById("exampleModal");
 exampleModal.addEventListener("show.bs.modal", (event) => {
   // Button that triggered the modal

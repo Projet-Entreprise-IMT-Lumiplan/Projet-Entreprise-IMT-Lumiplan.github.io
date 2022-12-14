@@ -36,7 +36,6 @@ function statut(dbRef,email) {
     });  
     } 
 
-
 var userEmail =window.sessionStorage.getItem("userMail");
 statut(dBRef,userEmail);
 var statutEmploye=window.sessionStorage.getItem("role");
