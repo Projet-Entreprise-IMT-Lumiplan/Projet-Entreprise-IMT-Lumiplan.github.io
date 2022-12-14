@@ -25,7 +25,7 @@ for (let i = 0; i < logiciels.length; i++) {
   const imageContainer = document.createElement("div");
   imageContainer.setAttribute("class", "position-relative");
   const imageElement = document.createElement("img");
-  imageElement.src = "./Frames_Icones/" + logiciels[i].Outils + ".png";
+  imageElement.src = "./Frame_Icones/" + logiciels[i].Outils + ".png";
   imageContainer.appendChild(imageElement);
   pieceElement.appendChild(imageContainer);
 
