@@ -8,7 +8,7 @@ import {getDatabase, ref, set, child, update, remove, onValue, get } from "https
 import {db} from "../index.js";
 console.log("Firebase importée");
 const dbRef = ref(getDatabase());
-let idee = get(child(dbRef, 'dataEmployesOutils/${1}/Prenom')).then((snapshot) => {
+get(child(dbRef, 'dataEmployesOutils/${1}/Prenom')).then((snapshot) => {
   if (snapshot.exists()) {
     console.log(snapshot.val());
   } else {
