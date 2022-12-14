@@ -1,3 +1,4 @@
+import {getDatabase, ref, set, child, update, remove, onValue, get } from "firebase/database";
 import {db} from "../index.js"
 
 const firebaseRef = ref(db, "dataEmployesOutils");
