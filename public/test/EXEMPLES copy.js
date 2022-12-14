@@ -9,6 +9,16 @@ const contrats = dataContrats.data;
 
 console.log("Json importé");
 
+//Récupération des données depuis Firebase
+import {getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+console.log("firebase importé");
+const firebaseRef = ref(db, "dataOutils");
+get(firebaseRef, function(snapshot) {
+  snapshot.forEach(function(element) { //element.value.prenom pour aller chercher le prenom
+    console.log(element.val()["Prenom"]);
+  })
+});
+
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
