@@ -38,7 +38,6 @@ get(child(dbRef, pathDataBase)).then((snapshot) => {
 	const length = snapshot.length; 
 	console.log("oui");
 	console.log(snapshot.val());
-}
 }).catch((error) => {
   console.log("error");
 });
