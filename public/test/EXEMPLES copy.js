@@ -14,7 +14,7 @@ import { getDatabase, ref, set, child, update, remove, onValue, get } from "http
 import {db} from '../index.js';
 console.log("Firebase importé");
 
-userId = 4;
+let userId = 4;
 pathDataBase = 'dataOutils/${userId}/Outils';
 
 const dbRef = ref(db);
