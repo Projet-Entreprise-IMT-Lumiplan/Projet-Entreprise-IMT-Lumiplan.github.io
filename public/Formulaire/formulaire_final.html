@@ -13,16 +13,7 @@
         <div class="sectionlumos">
             <img class="imglumos" src="../assets/lumos.png">
         </div>
-        <script type="text/javascript" src="formulaire.js"></script>
-        <div class="rechercher">
-            <form method="post" action="traitement.php">
-                <p>
-                    <input type="text" name="pseudo" id="pseudo" placeholder="Rechercher" size="30" maxlength="10" />
-                </p>
-            </form>
-        </div>
-
-        </div>
+        <script type="module" src="donnees.js"></script>
     </header>
 
 
@@ -213,7 +204,10 @@
             <div class="cell0">
             </div>
             <div class="cell0">
-                <input type="submit" onclick="JavaScript:sendData()">
+                <input type="submit" value="Sauvegarder">
+            </div>
+            <div class="cell0">
+                <input type="submit" onclick="donnees:sendData()">
             </div>
         </div>
 
