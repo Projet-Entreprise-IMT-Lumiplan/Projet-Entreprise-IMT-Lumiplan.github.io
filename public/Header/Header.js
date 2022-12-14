@@ -1,49 +1,45 @@
 import { auth, db } from '../index.js';
+//import {user} from '../authentification/AuthBackend.js';
 import { signOut, onAuthStateChanged, getAuth} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import { getDatabase, ref, set, child, update, remove, onValue,get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 
 
 //récupère les données de l'utilisateur connecté
-var userStatut;
-var userEmail;
-const dBRef=ref(db,'dataEmployesOutils');
-
+const dBRef=ref(db);
 onAuthStateChanged(auth, (user) => {
-        if (user) {
-            // User is signed in
-            userEmail=user.email;
-            console.log(userEmail);
-            getEmail(user.email);
-        } else {
-            // User is signed out
-        }
-    });
-
-function getEmail(email){
-    userEmail=email;
-    console.log('test');
-}
-
+    if (user) {
+        // User is signed in
+        userEmail=user.email;
+        window.sessionStorage.setItem("userMail",userEmail);
+        console.log(userEmail);
+        //getEmail(user.email);
+    } else {
+        // User is signed out
+    }
+});
 //récupère son statut avec la base de donnée
-
-
-function statut(dbRef, email) {
-    console.log(email);
-    onValue(dbRef, (snapshot) => {
+function statut(dbRef,email) {
+    var userStatut="";
+    get(child(dbRef,'dataEmployesOutils')).then((snapshot) => {
         //console.log(email)
         snapshot.forEach((idEmploye)=>{
-            const emailId = idEmploye.child('Adresse mail').val();
-            if (emailId == email) {
-                //console.log(emailId);
+            const emailId = idEmploye.child('AdresseMail').val();
+            if(emailId==email){
                 userStatut=idEmploye.child('Profil').val();
+                window.sessionStorage.setItem("role",userStatut);
+                console.log(window.sessionStorage.getItem("role"));
+            }else{
+                console.log("diff");
             }
         });
-    });    
+    });  
     } 
 
-statut(dBRef, userEmail);
 
+var userEmail =window.sessionStorage.getItem("userMail");
+statut(dBRef,userEmail);
+var statutEmploye=window.sessionStorage.getItem("role");
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
@@ -55,36 +51,17 @@ const showNavbar = (statut, navId, bodyId, headerId) => {
         headerpd = document.getElementById(headerId)
 
     
-   if(statut=="collaborateur") {
+   if(statut=="Collaborateur") {
        document.getElementById("collaborateurs_link").style.display="none";
        document.getElementById("formulaire_link").style.display="none";
-   } else if (statut="manager") {
-       document.getElementById("formulaire_link").style.display="none"; 
-   } else if (statut="dsi") {
-       document.getElementById("formulaire_link").style.display="none"; 
+   } else if (statut=="Manager" || statut=="Dsi") {
+       document.getElementById("collaborateurs_link").style.display="none"; 
    }
    
-
-
-   /*
-    // Validate that all variables exist
-    
-            toggle.addEventListener('click', () => {
-                // show navbar
-                console.log("clique");
-                nav.classList.toggle('show')
-                // change icon
-                toggle.classList.toggle('close')
-                // add padding to body
-                bodypd.classList.toggle('body-pd')
-                // add padding to header
-                headerpd.classList.toggle('body-pd')
-            })
-    */
             
 }
 
-showNavbar(userStatut, 'nav-bar', 'body-pd', 'header')
+showNavbar(statutEmploye, 'nav-bar', 'body-pd', 'header')
 
 /*===== LINK ACTIVE =====*/
 const linkColor = document.querySelectorAll('.nav_link')

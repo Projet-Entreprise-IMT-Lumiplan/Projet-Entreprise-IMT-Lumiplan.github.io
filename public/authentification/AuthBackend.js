@@ -1,4 +1,4 @@
-import { AuthErrorCodes, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { AuthErrorCodes, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import {auth,db} from '../index.js';
 
 
@@ -10,7 +10,8 @@ const lblAuthState = document.querySelector('#lblAuthState')
 const divLoginError = document.querySelector('#divLoginError')
 const lblLoginErrorMessage = document.querySelector('#lblLoginErrorMessage')
 
-//const dbRef=ref(db);
+//export var user;
+
 
 const loginEmailPassword = async() => { 
   
@@ -19,8 +20,6 @@ const loginEmailPassword = async() => {
 	
   try{
     const userCredential = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
-
-    var user=auth.currentUser;
     //redirection towards the correct folder
     window.location.replace("./Logiciels/index.html");
     /*
@@ -32,18 +31,23 @@ const loginEmailPassword = async() => {
     //push to firebase
     dbRef.child('users/' + user.uid )
     */
-  } catch(error){
+  }catch(error){
       console.log(error);
       showLoginError(error);
 	}
 }
 
-
-
-
 signInButton.addEventListener('click', loginEmailPassword);
 
 
+function getUser(){
+  const subscribe = onAuthStateChanged(auth, (currentUser) => {
+      var user=currentUser;
+      console.log(user);
+  })
+  return(subscribe);
+}
+getUser();
 
 export const showLoginState = (user) => {
   lblAuthState.innerHTML = `You're logged in as (uid: ${user.uid}, email: ${user.email}) `
