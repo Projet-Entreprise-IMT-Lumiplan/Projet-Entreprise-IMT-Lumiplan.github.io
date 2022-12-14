@@ -26,7 +26,7 @@ get(child(dbRef, pathDataBase)).then((snapshot) => {
     console.log("No data available");
   }
 }).catch((error) => {
-  console.error(error);
+  console.log("error");
 });
 console.log("Nom outil n°4");
 console.log(a);
