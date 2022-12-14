@@ -1,100 +1,74 @@
 import { auth, db } from '../index.js';
-import { signOut, onAuthStateChanged } from "firebase/auth";
-import { getDatabase, ref, set, child, update, remove, onValue,get } from "firebase/database";
-const emailConnected = ''; //valeur par défaut
-const statutEmploye = ''; //statut par défaut
+import { signOut, onAuthStateChanged, getAuth} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { getDatabase, ref, set, child, update, remove, onValue,get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+
 
 //récupère les données de l'utilisateur connecté
+var userStatut;
+var userEmail;
+const dBRef=ref(db,'dataEmployesOutils');
+
 onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // User is signed in
-        const emailConnected = user.email;
-        //console.log(emailConnected);
-    } else {
-        // User is signed out
-    }
-});
+        if (user) {
+            // User is signed in
+            userEmail=user.email;
+            console.log(userEmail);
+            getEmail(user.email);
+        } else {
+            // User is signed out
+        }
+    });
+
+function getEmail(email){
+    userEmail=email;
+    console.log('test');
+}
 
 //récupère son statut avec la base de donnée
 
 
 function statut(dbRef, email) {
-    /*
-    get(ref(db, 'dataEmployeOutils'), (snapshot) => {
-        snapshot.forEach((idEmploye) => {
-            let id = idEmploye.val();
-            const emailId = id.child('Adresse Mail').val();
-            console.log(emailId);
+    console.log(email);
+    onValue(dbRef, (snapshot) => {
+        //console.log(email)
+        snapshot.forEach((idEmploye)=>{
+            const emailId = idEmploye.child('Adresse mail').val();
             if (emailId == email) {
-                return (id.child('Profil'));
+                //console.log(emailId);
+                userStatut=idEmploye.child('Profil').val();
             }
         });
-    });
-    */
-    get(child(dbRef, 'dataEmployeOutils/0/Profil')).then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val());
-      } else {
-        console.log("No data available");
-      }
-    }).catch((error) => {
-      console.error(error);
-    });
-
-    /*
-    for (const id in child(dbRef,`dataEmployeOutils`).val()){
-        const pathData=`dataEmployeOutils/${id}`
-        console.log(pathData);
-        const emailId = get(child(dbRef, pathData));
-        console.log(emailId);
-        */
-        /*
-        if(emailId == email){
-            const statutEmploye = get(child(dbRef, pathData)).then((snapshot) => {
-                if (snapshot.exists()) {
-                  console.log(snapshot.val());
-                } else {
-                  console.log("No data available");
-                }
-              }).catch((error) => {
-                console.error(error);
-              });
-        }
-        */
-        
+    });    
     } 
-   
 
-const dBRef = ref(db);
-statut(dBRef, emailConnected);
+statut(dBRef, userEmail);
 
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 
-const showNavbar = (toggleId, navId, bodyId, headerId) => {
+const showNavbar = (statut, navId, bodyId, headerId) => {
     const nav = document.getElementById(navId),
         bodypd = document.getElementById(bodyId),
         headerpd = document.getElementById(headerId)
 
-    /*  
-   if(email=="collaborateur@gmail.com") {
+    
+   if(statut=="collaborateur") {
        document.getElementById("collaborateurs_link").style.display="none";
        document.getElementById("formulaire_link").style.display="none";
-       document.getElementById("contrats_link").style.display="none";
-   } else if (email="manager@gmail.com") {
-       document.getElementById("contrats_link").style.display="none";
+   } else if (statut="manager") {
        document.getElementById("formulaire_link").style.display="none"; 
-   } else if (email="drh@gmail.com") {
+   } else if (statut="dsi") {
        document.getElementById("formulaire_link").style.display="none"; 
    }
-   */
+   
 
 
-
+   /*
     // Validate that all variables exist
-    /*
+    
             toggle.addEventListener('click', () => {
                 // show navbar
                 console.log("clique");
@@ -106,10 +80,11 @@ const showNavbar = (toggleId, navId, bodyId, headerId) => {
                 // add padding to header
                 headerpd.classList.toggle('body-pd')
             })
-            */
+    */
+            
 }
 
-showNavbar('nav-bar', 'body-pd', 'header')
+showNavbar(userStatut, 'nav-bar', 'body-pd', 'header')
 
 /*===== LINK ACTIVE =====*/
 const linkColor = document.querySelectorAll('.nav_link')

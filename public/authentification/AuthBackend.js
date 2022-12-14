@@ -1,5 +1,5 @@
-import { AuthErrorCodes, signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from '../index.js';
+import { AuthErrorCodes, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import {auth,db} from '../index.js';
 
 
 const txtEmail = document.querySelector('#txtEmail')  
@@ -10,7 +10,7 @@ const lblAuthState = document.querySelector('#lblAuthState')
 const divLoginError = document.querySelector('#divLoginError')
 const lblLoginErrorMessage = document.querySelector('#lblLoginErrorMessage')
 
-
+//const dbRef=ref(db);
 
 const loginEmailPassword = async() => { 
   
@@ -19,9 +19,19 @@ const loginEmailPassword = async() => {
 	
   try{
     const userCredential = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
+
+    var user=auth.currentUser;
     //redirection towards the correct folder
     window.location.replace("./Logiciels/index.html");
+    /*
+    //creation of the user in the database
+    var user_data={
+      email:txtEmail
+    }
 
+    //push to firebase
+    dbRef.child('users/' + user.uid )
+    */
   } catch(error){
       console.log(error);
       showLoginError(error);
