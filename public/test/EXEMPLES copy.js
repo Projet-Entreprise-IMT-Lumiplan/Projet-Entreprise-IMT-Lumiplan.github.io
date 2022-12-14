@@ -8,7 +8,7 @@ const dataContrats = await reponseContrats.json();
 const contrats = dataContrats.data;
 
 console.log("Json importé");
-
+/*
 //Récupération des données depuis Firebase
 import {getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import {db} from "../index.js"
@@ -19,7 +19,7 @@ get(firebaseRef, function(snapshot) {
     console.log(element.val()["Prenom"]);
   })
 });
-
+*/
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
