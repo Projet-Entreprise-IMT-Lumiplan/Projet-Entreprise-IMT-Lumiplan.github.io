@@ -20,13 +20,15 @@ const dbRef = ref(db);
 let a;
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
-	  a = snapchot[0][Outils].val();
+	  console.log("oui");
+	  a = snapchot["0"]["Outils"].val();
     console.log(snapshot.val());
   } else {
+	  console.log("non");
     console.log("No data available");
   }
 }).catch((error) => {
-  console.error(error);
+  console.log("error");
 });
 console.log("Nom outil n°4");
 console.log(a);
