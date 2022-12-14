@@ -14,13 +14,12 @@ import { getDatabase, ref, set, child, update, remove, onValue, get } from "http
 import {db} from '../index.js';
 console.log("Firebase importé");
 
-let userId = 4;
-let pathDataBase = "dataOutils/" + userId + "/Outils";
-
+let pathDataBase = "dataOutils";
 const dbRef = ref(db);
 
-let i = get(child(dbRef, pathDataBase)).then((snapshot) => {
+get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
+	  let a = snapchot[0][Outils].val();
     console.log(snapshot.val());
   } else {
     console.log("No data available");
@@ -29,7 +28,7 @@ let i = get(child(dbRef, pathDataBase)).then((snapshot) => {
   console.error(error);
 });
 console.log("Nom outil n°4");
-console.log(i);
+console.log(a);
 
 // Création des fiches logiciels
 for (let i = 0; i < logiciels.length; i++) {
