@@ -18,34 +18,27 @@ let pathDataBase = "dataOutils";
 const dbRef = ref(db);
 
 /*
-get(child(dbRef, pathDataBase)).then((snapshot) => {
+get(child(dbRef,'dataEmployesOutils')).then((snapshot) => {
         //console.log(email)
-        if (snapchot.exists()) {
-		const emailId = idEmploye.child('AdresseMail').val();
+        snapshot.forEach((idEmploye)=>{
+            const emailId = idEmploye.child('AdresseMail').val();
+            if(emailId==email){
                 console.log("egalite");
                 userStatut=idEmploye.child('Profil').val();
                 console.log(userStatut);
-        } else {
-                console.log("erreur");
+            }else{
+                console.log("diff");
             }
         });
     });
-console.log
-console.log(emailId);
 */
 
 get(child(dbRef, pathDataBase)).then((snapshot) => {
-  if (snapshot.exists()) {
-	  const outil = snapchot.child("1/Outils").val();
-	  const length = snapchot.length; 
-	  console.log("oui");
-    console.log(snapshot.val());
-  } else {
-	  const outil = non;
-	  const lenght = non;
-	  console.log("non");
-    console.log("No data available");
-  }
+	const outil = snapshot.child("1/Outils").val();
+	const length = snapshot.length; 
+	console.log("oui");
+	console.log(snapshot.val());
+}
 }).catch((error) => {
   console.log("error");
 });
