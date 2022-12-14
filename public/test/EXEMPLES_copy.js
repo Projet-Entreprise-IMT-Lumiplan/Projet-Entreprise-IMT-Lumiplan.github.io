@@ -35,9 +35,10 @@ console.log
 console.log(emailId);
 */
 
+let idEmploye = 1;
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
-	  const a = 0.child('Outils').val();
+	  const a = idEmploye.child('Outils').val();
 	  console.log("oui");
     console.log(snapshot.val());
   } else {
