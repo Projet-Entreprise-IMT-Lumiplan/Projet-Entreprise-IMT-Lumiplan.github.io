@@ -111,19 +111,18 @@ function afficherecherche(value, valeur){
 function afficherformulaire(id){
     // Passer la valeur "En lecture" à 1
     // Open Formulaire
-    document.getElementById(id).innerHTML = "On affichera le formulaire à compléter";
+    window.open('formulaire_final.html');
 };
 
 // Permet à la page d'afficher le formulaire d'entré
 function afficherformulairs(id){
     // Passer la valeur "En lecture" à 1
     // Open Formulaire
-    document.getElementById(id).innerHTML = "On affichera le formulaire avec nostalgie";
+    window.open('formulaire_final.html');
 };
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire ou le workflow
 function afficherpopup1(id){
-    document.getElementById(id).innerHTML = "On affiche un pop-up de choix";
     afficherpopup();
     const btngauche = document.getElementById("btngauche");
     btngauche.innerHTML = "Edition Formulaire";
@@ -131,6 +130,7 @@ function afficherpopup1(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire
+        window.open('formulaire_final.html');
     });
     const btndroit = document.getElementById("btndroit");
     btndroit.innerHTML = "Accès workflow";
@@ -145,7 +145,6 @@ function afficherpopup1(id){
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire d'entré ou de sortie
 function afficherpopup2(id){
-    document.getElementById(id).innerHTML = "On affiche un autre pop-up de choix";
     afficherpopup();
     const btngauche = document.getElementById("btngauche");
     btngauche.innerHTML = "Consulter Formulaire d'entré";
@@ -153,6 +152,7 @@ function afficherpopup2(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire d'entré
+        window.open('formulaire_final.html');
     });
     const btndroit = document.getElementById("btndroit");
     btndroit.innerHTML = "Commencer le Formulaire de sortie";
@@ -160,13 +160,13 @@ function afficherpopup2(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire de sortie
+        window.open('formulaire_final.html');
     });
     placerpopup();
 };
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire de sortie ou le workflow
 function afficherpopup3(id){
-    document.getElementById(id).innerHTML = "On affiche encore un autre pop-up de choix";
     afficherpopup();
     const btngauche = document.getElementById("btngauche");
     btngauche.innerHTML = "Edition Formulaire de sortie";
@@ -174,6 +174,7 @@ function afficherpopup3(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire de sortie
+        window.open('formulaire_final.html');
     });
     const btndroit = document.getElementById("btndroit");
     btndroit.innerHTML = "Accès workflow";
