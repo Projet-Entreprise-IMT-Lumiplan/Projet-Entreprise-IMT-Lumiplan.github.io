@@ -17,7 +17,7 @@ console.log("Firebase importé");
 let pathDataBase = "dataOutils";
 const dbRef = ref(db);
 
-let a;
+var a;
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
 	  a = snapchot[0][Outils].val();
