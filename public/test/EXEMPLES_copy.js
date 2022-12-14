@@ -17,11 +17,28 @@ console.log("Firebase importé");
 let pathDataBase = "dataOutils";
 const dbRef = ref(db);
 
-let a;
+let a = 1;
+/*
+get(child(dbRef, pathDataBase)).then((snapshot) => {
+        //console.log(email)
+        if (snapchot.exists()) {
+		const emailId = idEmploye.child('AdresseMail').val();
+                console.log("egalite");
+                userStatut=idEmploye.child('Profil').val();
+                console.log(userStatut);
+        } else {
+                console.log("erreur");
+            }
+        });
+    });
+console.log
+console.log(emailId);
+*/
+
 get(child(dbRef, pathDataBase)).then((snapshot) => {
   if (snapshot.exists()) {
+	  const a = 0.child('Outils').val();
 	  console.log("oui");
-	  a = snapchot["0"]["Outils"].val();
     console.log(snapshot.val());
   } else {
 	  console.log("non");
