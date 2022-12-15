@@ -8,9 +8,9 @@
 
 [Formulaires-stockage](https://projet-entreprise-imt-lumiplan.github.io/public/Formulaire/ChoixFormulaire.html)
 
-[Formulaire-entrée](https://projet-entreprise-imt-lumiplan.github.io/public/Formulaire/formulaire_final.html)
+[Formulaire-entrée](https://projet-entreprise-imt-lumiplan.github.io/public/Formulaire/formulaire_entree.html)
 
-[Formulaire-sortie](https://projet-entreprise-imt-lumiplan.github.io/public/Formulaire/formulaire_final.html)
+[Formulaire-sortie](https://projet-entreprise-imt-lumiplan.github.io/public/Formulaire/formulaire_sortie.html)
 
 [Tuto](https://projet-entreprise-imt-lumiplan.github.io/tuto)
 
