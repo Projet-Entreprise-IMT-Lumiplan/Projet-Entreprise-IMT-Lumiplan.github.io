@@ -111,14 +111,14 @@ function afficherecherche(value, valeur){
 function afficherformulaire(id){
     // Passer la valeur "En lecture" à 1
     // Open Formulaire
-    window.open('formulaire_final.html');
+    window.open('formulaire_entree.html');
 };
 
 // Permet à la page d'afficher le formulaire d'entré
 function afficherformulairs(id){
     // Passer la valeur "En lecture" à 1
     // Open Formulaire
-    window.open('formulaire_final.html');
+    window.open('formulaire_sortie.html');
 };
 
 // Permet d'afficher un pop-up pour choisir entre le formulaire ou le workflow
@@ -130,7 +130,7 @@ function afficherpopup1(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire
-        window.open('formulaire_final.html');
+        window.open('formulaire_entree.html');
     });
     const btndroit = document.getElementById("btndroit");
     btndroit.innerHTML = "Accès workflow";
@@ -152,7 +152,7 @@ function afficherpopup2(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire d'entré
-        window.open('formulaire_final.html');
+        window.open('formulaire_entree.html');
     });
     const btndroit = document.getElementById("btndroit");
     btndroit.innerHTML = "Commencer le Formulaire de sortie";
@@ -160,7 +160,7 @@ function afficherpopup2(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire de sortie
-        window.open('formulaire_final.html');
+        window.open('formulaire_sortie.html');
     });
     placerpopup();
 };
@@ -174,7 +174,7 @@ function afficherpopup3(id){
         event.preventDefault();
         // Passer la valeur "En lecture" à 1
         // Open Formulaire de sortie
-        window.open('formulaire_final.html');
+        window.open('formulaire_sortie.html');
     });
     const btndroit = document.getElementById("btndroit");
     btndroit.innerHTML = "Accès workflow";
