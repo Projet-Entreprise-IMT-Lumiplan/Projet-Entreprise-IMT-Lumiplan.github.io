@@ -13,6 +13,3 @@
 [Formulaire-sortie](https://projet-entreprise-imt-lumiplan.github.io/public/Formulaire/formulaire_sortie.html)
 
 [Tuto](https://projet-entreprise-imt-lumiplan.github.io/tuto)
-
-[Test Firebase](https://projet-entreprise-imt-lumiplan.github.io/public/test/index.html)
-
