@@ -1,11 +1,11 @@
 //Récupération des données de la firebase database
 
+import { getDatabase, ref, set, child, update, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import {db} from '../index.js';
 const dbRef = ref(db);
+
 get(child(dbRef,'dataOutils')).then((snapshot) => {
-  console.log(snapshot);
-})
-get(child(dbRef,'dataOutils')).then((snapshot) => {
-  console.log("bdd");
+  //On balaie la liste des outils de la base de données
   snapshot.forEach((idOutil) => {
     const sectionFiches = document.querySelector(".fiches");
     // BOUTON
