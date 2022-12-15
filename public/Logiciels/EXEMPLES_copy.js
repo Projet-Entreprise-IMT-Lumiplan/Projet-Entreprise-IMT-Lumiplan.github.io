@@ -1,7 +1,8 @@
-import{db} from '../index.js';
-import{ref,get,child} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
+import { db } from '../index.js';
+import { ref, get, child } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
 
 // Récupération des données depuis le fichier JSON
+
 const reponse = await fetch("donneeOutils.json");
 const data = await reponse.json();
 const logiciels = data.data;
@@ -13,38 +14,42 @@ const contrats = dataContrats.data;
 
 //Récupération des données de la firebase database
 
-const dbRef=ref(db);
-
-get(child(dbRef, 'dataOutils')).then((snapshot) => {
-   snapshot.forEach((idOutil) => {
+const dbRef = ref(db);
+get(child(dbRef,'dataOutils')).then((snapshot) => {
+  console.log(snapshot);
+})
+get(child(dbRef,'dataOutils')).then((snapshot) => {
+  console.log("bdd");
+  snapshot.forEach((idOutil) => {
     const sectionFiches = document.querySelector(".fiches");
     // BOUTON
-  const pieceElement = document.createElement("button");
-  pieceElement.type = "button";
-  pieceElement.setAttribute("class", "btn btn-light article");
-  pieceElement.setAttribute("data-bs-toggle", "modal");
-  pieceElement.setAttribute("data-bs-target", "#exampleModal");
-  pieceElement.setAttribute("data-bs-logiciel", idOutil.val());
+    const pieceElement = document.createElement("button");
+    pieceElement.type = "button";
+    pieceElement.setAttribute("class", "btn btn-light article");
+    pieceElement.setAttribute("data-bs-toggle", "modal");
+    pieceElement.setAttribute("data-bs-target", "#exampleModal");
+    pieceElement.setAttribute("data-bs-logiciel", idOutil.val());
 
-  // ICONE
-  const imageContainer = document.createElement("div");
-  imageContainer.setAttribute("class", "position-relative");
-  const imageElement = document.createElement("img");
-  imageElement.src = "./Frames_Icones/" + idOutil.child("Outils").val() + ".png";
-  console.log(imageElement.src);
-  imageContainer.appendChild(imageElement);
-  pieceElement.appendChild(imageContainer);
+    // ICONE
+    const imageContainer = document.createElement("div");
+    imageContainer.setAttribute("class", "position-relative");
+    const imageElement = document.createElement("img");
+    imageElement.src = "./Frames_Icones/" + idOutil.child("Outils").val() + ".png";
+    console.log(imageElement.src);
+    imageContainer.appendChild(imageElement);
+    pieceElement.appendChild(imageContainer);
 
-  // TITRE
-  const nomElement = document.createElement("h2");
-  nomElement.innerText = idOutil.child("Outils").val();
-  pieceElement.appendChild(nomElement);
-  sectionFiches.appendChild(pieceElement);
-   });
- 
-}).catch((error) => {
-  console.log("error");
-});
+    // TITRE
+    const nomElement = document.createElement("h2");
+    nomElement.innerText = idOutil.child("Outils").val();
+    pieceElement.appendChild(nomElement);
+    sectionFiches.appendChild(pieceElement);
+  });
+
+})
+  .catch((error) => {
+    console.log("error");
+  });
 
 
 /*
@@ -85,9 +90,9 @@ for (let i = 0; i < logiciels.length; i++) {
     }
   }
   if (content<7) {
-	notif.setAttribute('class','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger');
+  notif.setAttribute('class','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger');
   }else{
-	notif.setAttribute('class','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary');
+  notif.setAttribute('class','position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary');
   }
   notif.innerText = content;
   imageContainer.appendChild(notif);
