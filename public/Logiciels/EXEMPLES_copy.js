@@ -31,6 +31,7 @@ get(child(dbRef, 'dataOutils')).then((snapshot) => {
   imageContainer.setAttribute("class", "position-relative");
   const imageElement = document.createElement("img");
   imageElement.src = "./Frames_Icones/" + idOutil.child("Outils").val() + ".png";
+  console.log(imageElement.src);
   imageContainer.appendChild(imageElement);
   pieceElement.appendChild(imageContainer);
 
