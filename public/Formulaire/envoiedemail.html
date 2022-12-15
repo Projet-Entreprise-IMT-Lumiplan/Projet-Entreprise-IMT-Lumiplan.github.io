@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Send Mail</title>
+    <script src=
+        "https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script type="text/javascript">
+    function sendEmail() {
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "antonioginodelavega@gmail.com",
+            Password : "2E3B4C98CEC7E58EBD0967EB3A58CB317801",
+            To : 'jean.tollemer@imt-atlantique.net',
+            From : "antonioginodelavega@gmail.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+            message => alert(message)
+        );
+        /*/
+        Email.send({
+            Host : "smtp.elasticemail.com", //port : 2525
+            Username : "test.fhzfeu@gmail.com",
+            Password : "E15125542A4EFCC4A54453293547C89666C1",
+            To : 'jean.tollemer@imt-atlantique.net',
+            From : "test.fhzfeu@gmail.com",
+            Subject : "Workflow",
+            Body : "This is not SPAM "
+        }).then(
+            message => alert(message)
+        );
+        Email.send({
+            SecureToken : "69cc85a1-cf75-4bed-a1df-1930b4381261",
+            To : 'jean.tollemer@imt-atlantique.net',
+            From : "test.fhzfeu@gmail.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+            message => alert(message)
+        );
+        /*/
+    }
+    </script>
+</head>
+ 
+<body>
+    <form method="post">
+        <input type="button" value="Send Email"
+        onclick="sendEmail()" />
+    </form>
+</body>
+ 
+</html>
